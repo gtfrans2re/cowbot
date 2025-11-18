@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/src/cowbot_gazebo/launch/spawn_in_gazebo.launch.py

@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/build/serial_motor_msgs/rosidl_generator_cpp/serial_motor_msgs/msg/motor_commands.hpp

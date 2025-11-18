@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/src/serial_motor/setup.py

@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_driver/launch/lslidar_launch.py

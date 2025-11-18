@@ -1,9 +1,0 @@
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/uninstall.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/cowbot_description_uninstall.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/test.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/edit_cache.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/rebuild_cache.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/list_install_components.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/install.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/install/local.dir
-/home/cowbot/cowbot_ws/build/cowbot_description/CMakeFiles/install/strip.dir

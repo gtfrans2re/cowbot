@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/src/cowbot_description/launch/robot_state_publisher_hardware.launch.py

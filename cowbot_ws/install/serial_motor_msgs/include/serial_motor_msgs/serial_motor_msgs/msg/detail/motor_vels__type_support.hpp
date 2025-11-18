@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/build/serial_motor_msgs/rosidl_generator_cpp/serial_motor_msgs/msg/detail/motor_vels__type_support.hpp

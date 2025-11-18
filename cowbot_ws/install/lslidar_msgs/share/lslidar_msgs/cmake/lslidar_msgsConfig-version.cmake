@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/build/lslidar_msgs/ament_cmake_core/lslidar_msgsConfig-version.cmake

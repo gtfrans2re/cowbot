@@ -1,0 +1,54 @@
+# ROS 2 build artifacts
+cowbot_ws/build/
+cowbot_ws/install/
+cowbot_ws/log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# C/C++
+*.o
+*.so
+*.a
+*.dylib
+*.exe
+*.out
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Sensitive files
+.ssh/
+.gnupg/
+*.pem
+*.key
+
+# User-specific files
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.cache/
+.local/
+.ros/
+.sudo_as_admin_successful
+.viminfo
+.gitconfig
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+*.swp

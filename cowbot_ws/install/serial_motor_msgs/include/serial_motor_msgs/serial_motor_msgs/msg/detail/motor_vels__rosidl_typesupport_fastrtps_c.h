@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/build/serial_motor_msgs/rosidl_typesupport_fastrtps_c/serial_motor_msgs/msg/detail/motor_vels__rosidl_typesupport_fastrtps_c.h

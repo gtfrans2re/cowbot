@@ -1,1 +1,0 @@
-/home/cowbot/cowbot_ws/src/serial_motor_msgs/msg/MotorCommands.msg
