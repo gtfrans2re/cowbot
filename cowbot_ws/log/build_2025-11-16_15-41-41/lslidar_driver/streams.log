@@ -1,0 +1,191 @@
+[0.050s] Invoking command in '/home/cowbot/cowbot_ws/build/lslidar_driver': CMAKE_PREFIX_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs:/home/cowbot/cowbot_ws/install/serial_motor_msgs:/home/cowbot/cowbot_ws/install/lslidar_driver:/home/cowbot/cowbot_ws/install/cowbot_description:/home/cowbot/cowbot_ws/install/cowbot_bringup:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib PYTHONPATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/build/serial_motor:/home/cowbot/cowbot_ws/install/serial_motor/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake /home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/lslidar_driver
+[0.341s] -- The C compiler identification is GNU 13.3.0
+[0.624s] -- The CXX compiler identification is GNU 13.3.0
+[0.714s] -- Detecting C compiler ABI info
+[1.192s] -- Detecting C compiler ABI info - done
+[1.227s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.228s] -- Detecting C compile features
+[1.229s] -- Detecting C compile features - done
+[1.279s] -- Detecting CXX compiler ABI info
+[1.788s] -- Detecting CXX compiler ABI info - done
+[1.826s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.827s] -- Detecting CXX compile features
+[1.829s] -- Detecting CXX compile features - done
+[2.425s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread 
+[2.451s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[3.203s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.567s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.213s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[4.309s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[4.415s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.530s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.954s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[4.979s] -- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+[5.130s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[5.709s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found suitable version "1.83.0", minimum required is "1.65.0") found components: system filesystem iostreams serialization 
+[5.716s] [33mCMake Warning (dev) at /usr/lib/aarch64-linux-gnu/cmake/pcl/Modules/FindFLANN.cmake:45 (find_package):
+[5.716s]   Policy CMP0144 is not set: find_package uses upper-case <PACKAGENAME>_ROOT
+[5.716s]   variables.  Run "cmake --help-policy CMP0144" for policy details.  Use the
+[5.717s]   cmake_policy command to set the policy and suppress this warning.
+[5.717s] 
+[5.717s]   CMake variable FLANN_ROOT is set to:
+[5.717s] 
+[5.718s]     /usr
+[5.718s] 
+[5.718s]   For compatibility, find_package is ignoring the variable, but code in a
+[5.719s]   .cmake module might still use it.
+[5.719s] Call Stack (most recent call first):
+[5.720s]   /usr/lib/aarch64-linux-gnu/cmake/pcl/PCLConfig.cmake:261 (find_package)
+[5.720s]   /usr/lib/aarch64-linux-gnu/cmake/pcl/PCLConfig.cmake:306 (find_flann)
+[5.720s]   /usr/lib/aarch64-linux-gnu/cmake/pcl/PCLConfig.cmake:570 (find_external_library)
+[5.720s]   CMakeLists.txt:21 (find_package)
+[5.721s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[5.721s] [0m
+[5.724s] -- Found flann version 1.9.2
+[7.261s] -- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+[7.262s] -- Found OpenMP: TRUE (found version "4.5") found components: CXX 
+[7.419s] -- Found Threads: TRUE  
+[7.430s] -- Found GLEW: /usr/lib/aarch64-linux-gnu/libGLEW.so  
+[7.490s] -- Found OpenGL: /usr/lib/aarch64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[8.477s] -- Found MPI_C: /usr/lib/aarch64-linux-gnu/libmpi.so (found version "3.1") 
+[8.478s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[8.489s] -- Found JsonCpp: /usr/lib/aarch64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[8.533s] -- Found ZLIB: /usr/lib/aarch64-linux-gnu/libz.so (found version "1.3")  
+[8.610s] -- Found PNG: /usr/lib/aarch64-linux-gnu/libpng.so (found version "1.6.43") 
+[8.750s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[9.376s] -- Found X11: /usr/include   
+[9.378s] -- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+[9.844s] -- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+[9.845s] -- Looking for gethostbyname
+[10.289s] -- Looking for gethostbyname - found
+[10.290s] -- Looking for connect
+[10.726s] -- Looking for connect - found
+[10.727s] -- Looking for remove
+[11.162s] -- Looking for remove - found
+[11.163s] -- Looking for shmat
+[11.597s] -- Looking for shmat - found
+[11.597s] -- Looking for IceConnectionNumber in ICE
+[12.043s] -- Looking for IceConnectionNumber in ICE - found
+[12.648s] -- Found EXPAT: /usr/lib/aarch64-linux-gnu/libexpat.so (found version "2.6.1") 
+[12.663s] -- Found double-conversion: /usr/lib/aarch64-linux-gnu/libdouble-conversion.so  
+[12.674s] -- Found LZ4: /usr/lib/aarch64-linux-gnu/liblz4.so (found version "1.9.4") 
+[12.684s] -- Found LZMA: /usr/lib/aarch64-linux-gnu/liblzma.so (found version "5.4.5") 
+[13.253s] -- Found JPEG: /usr/lib/aarch64-linux-gnu/libjpeg.so (found version "80") 
+[13.411s] -- Found TIFF: /usr/lib/aarch64-linux-gnu/libtiff.so (found version "4.5.1")  
+[13.427s] -- Found Freetype: /usr/lib/aarch64-linux-gnu/libfreetype.so (found version "2.13.2") 
+[13.455s] -- Found utf8cpp: /usr/include/utf8cpp  
+[13.924s] -- Checking for module 'libusb-1.0'
+[14.007s] --   Found libusb-1.0, version 1.0.27
+[14.231s] -- Found libusb: /usr/lib/aarch64-linux-gnu/libusb-1.0.so  
+[14.237s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[14.238s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[14.576s] -- Found OpenNI2: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[14.576s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[14.586s] -- Found Pcap: /usr/lib/aarch64-linux-gnu/libpcap.so  
+[16.490s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[16.521s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[18.307s] -- Found Qhull version 8.0.2
+[20.135s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[21.903s] -- looking for PCL_COMMON
+[21.906s] -- Found PCL_COMMON: /usr/lib/aarch64-linux-gnu/libpcl_common.so  
+[21.907s] -- looking for PCL_KDTREE
+[21.910s] -- Found PCL_KDTREE: /usr/lib/aarch64-linux-gnu/libpcl_kdtree.so  
+[21.910s] -- looking for PCL_OCTREE
+[21.913s] -- Found PCL_OCTREE: /usr/lib/aarch64-linux-gnu/libpcl_octree.so  
+[21.914s] -- looking for PCL_SEARCH
+[21.917s] -- Found PCL_SEARCH: /usr/lib/aarch64-linux-gnu/libpcl_search.so  
+[21.918s] -- looking for PCL_SAMPLE_CONSENSUS
+[21.921s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/aarch64-linux-gnu/libpcl_sample_consensus.so  
+[21.922s] -- looking for PCL_FILTERS
+[21.925s] -- Found PCL_FILTERS: /usr/lib/aarch64-linux-gnu/libpcl_filters.so  
+[21.926s] -- looking for PCL_2D
+[21.927s] -- Found PCL_2D: /usr/include/pcl-1.14  
+[21.928s] -- looking for PCL_GEOMETRY
+[21.929s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.14  
+[21.930s] -- looking for PCL_IO
+[21.935s] -- Found PCL_IO: /usr/lib/aarch64-linux-gnu/libpcl_io.so  
+[21.936s] -- looking for PCL_FEATURES
+[21.939s] -- Found PCL_FEATURES: /usr/lib/aarch64-linux-gnu/libpcl_features.so  
+[21.940s] -- looking for PCL_ML
+[21.943s] -- Found PCL_ML: /usr/lib/aarch64-linux-gnu/libpcl_ml.so  
+[21.944s] -- looking for PCL_SEGMENTATION
+[21.947s] -- Found PCL_SEGMENTATION: /usr/lib/aarch64-linux-gnu/libpcl_segmentation.so  
+[21.948s] -- looking for PCL_VISUALIZATION
+[21.951s] -- Found PCL_VISUALIZATION: /usr/lib/aarch64-linux-gnu/libpcl_visualization.so  
+[21.952s] -- looking for PCL_SURFACE
+[21.955s] -- Found PCL_SURFACE: /usr/lib/aarch64-linux-gnu/libpcl_surface.so  
+[21.956s] -- looking for PCL_REGISTRATION
+[21.959s] -- Found PCL_REGISTRATION: /usr/lib/aarch64-linux-gnu/libpcl_registration.so  
+[21.960s] -- looking for PCL_KEYPOINTS
+[21.963s] -- Found PCL_KEYPOINTS: /usr/lib/aarch64-linux-gnu/libpcl_keypoints.so  
+[21.964s] -- looking for PCL_TRACKING
+[21.967s] -- Found PCL_TRACKING: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so  
+[21.968s] -- looking for PCL_RECOGNITION
+[21.971s] -- Found PCL_RECOGNITION: /usr/lib/aarch64-linux-gnu/libpcl_recognition.so  
+[21.973s] -- looking for PCL_STEREO
+[21.976s] -- Found PCL_STEREO: /usr/lib/aarch64-linux-gnu/libpcl_stereo.so  
+[21.976s] -- looking for PCL_APPS
+[21.979s] -- Found PCL_APPS: /usr/lib/aarch64-linux-gnu/libpcl_apps.so  
+[21.982s] -- looking for PCL_IN_HAND_SCANNER
+[21.983s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.14  
+[21.984s] -- looking for PCL_MODELER
+[21.985s] -- Found PCL_MODELER: /usr/include/pcl-1.14  
+[21.986s] -- looking for PCL_POINT_CLOUD_EDITOR
+[21.990s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.14  
+[21.991s] -- looking for PCL_OUTOFCORE
+[21.995s] -- Found PCL_OUTOFCORE: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so  
+[21.996s] -- looking for PCL_PEOPLE
+[21.999s] -- Found PCL_PEOPLE: /usr/lib/aarch64-linux-gnu/libpcl_people.so  
+[22.003s] -- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::RenderingContextOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL  
+[22.025s] -- Found diagnostic_updater: 4.2.6 (/opt/ros/jazzy/share/diagnostic_updater/cmake)
+[22.258s] -- Found lslidar_msgs: 1.2.0 (/home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake)
+[22.340s] -- Found pluginlib: 5.4.2 (/opt/ros/jazzy/share/pluginlib/cmake)
+[22.495s] -- Found TinyXML2 via Config file: /usr/lib/aarch64-linux-gnu/cmake/tinyxml2
+[22.520s] -- Found pcl_conversions: 2.6.2 (/opt/ros/jazzy/share/pcl_conversions/cmake)
+[23.367s] -- Configuring done (23.3s)
+[24.178s] -- Generating done (0.7s)
+[24.211s] -- Build files have been written to: /home/cowbot/cowbot_ws/build/lslidar_driver
+[24.303s] Invoked command in '/home/cowbot/cowbot_ws/build/lslidar_driver' returned '0': CMAKE_PREFIX_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs:/home/cowbot/cowbot_ws/install/serial_motor_msgs:/home/cowbot/cowbot_ws/install/lslidar_driver:/home/cowbot/cowbot_ws/install/cowbot_description:/home/cowbot/cowbot_ws/install/cowbot_bringup:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib PYTHONPATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/build/serial_motor:/home/cowbot/cowbot_ws/install/serial_motor/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake /home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/lslidar_driver
+[24.311s] Invoking command in '/home/cowbot/cowbot_ws/build/lslidar_driver': CMAKE_PREFIX_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs:/home/cowbot/cowbot_ws/install/serial_motor_msgs:/home/cowbot/cowbot_ws/install/lslidar_driver:/home/cowbot/cowbot_ws/install/cowbot_description:/home/cowbot/cowbot_ws/install/cowbot_bringup:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib PYTHONPATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/build/serial_motor:/home/cowbot/cowbot_ws/install/serial_motor/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/lslidar_driver -- -j4 -l4
+[24.610s] [ 20%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/lslidar_driver_node.cc.o[0m
+[24.613s] [ 40%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/lslidar_driver.cc.o[0m
+[24.620s] [ 60%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/input.cc.o[0m
+[24.634s] [ 80%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/lsiosr.cpp.o[0m
+[78.996s] [01m[K/home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_driver/src/lslidar_driver.cc:[m[K In member function ‘[01m[Kbool lslidar_driver::LslidarDriver::[01;32m[Kpolling[m[K()[m[K’:
+[78.997s] [01m[K/home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_driver/src/lslidar_driver.cc:1379:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid[01;32m[K operator delete[m[K(void*, std::size_t)[m[K’ called on pointer returned from a mismatched allocation function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmismatched-new-delete-Wmismatched-new-delete]8;;[m[K]
+[78.997s]  1379 |                 delete [01;35m[Kpacket_bytes[m[K;
+[78.998s]       |                        [01;35m[K^~~~~~~~~~~~[m[K
+[78.998s] [01m[K/home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_driver/src/lslidar_driver.cc:1236:68:[m[K [01;36m[Knote: [m[Kreturned from ‘[01m[Kvoid*[01;32m[K operator new [][m[K(std::size_t)[m[K’
+[78.999s]  1236 |                 unsigned char *packet_bytes = new unsigned char[500[01;36m[K][m[K;
+[78.999s]       |                                                                    [01;36m[K^[m[K
+[95.351s] [100%] [32m[1mLinking CXX executable lslidar_driver_node[0m
+[107.765s] [100%] Built target lslidar_driver_node
+[107.821s] Invoked command in '/home/cowbot/cowbot_ws/build/lslidar_driver' returned '0': CMAKE_PREFIX_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs:/home/cowbot/cowbot_ws/install/serial_motor_msgs:/home/cowbot/cowbot_ws/install/lslidar_driver:/home/cowbot/cowbot_ws/install/cowbot_description:/home/cowbot/cowbot_ws/install/cowbot_bringup:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib PYTHONPATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/build/serial_motor:/home/cowbot/cowbot_ws/install/serial_motor/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/lslidar_driver -- -j4 -l4
+[107.829s] Invoking command in '/home/cowbot/cowbot_ws/build/lslidar_driver': CMAKE_PREFIX_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs:/home/cowbot/cowbot_ws/install/serial_motor_msgs:/home/cowbot/cowbot_ws/install/lslidar_driver:/home/cowbot/cowbot_ws/install/cowbot_description:/home/cowbot/cowbot_ws/install/cowbot_bringup:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib PYTHONPATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/build/serial_motor:/home/cowbot/cowbot_ws/install/serial_motor/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/lslidar_driver
+[107.867s] -- Install configuration: ""
+[107.869s] -- Execute custom install script
+[107.871s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/launch/lslidar_double_launch.py
+[107.915s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/launch/lslidar_launch.py
+[107.960s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/params/lsx10.yaml
+[108.006s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/params/lsx10_1.yaml
+[108.050s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/params/lsx10_2.yaml
+[108.095s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/rviz/lslidar.rviz
+[108.142s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/lib/lslidar_driver/lslidar_driver_node
+[108.188s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/ament_index/resource_index/package_run_dependencies/lslidar_driver
+[108.234s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/ament_index/resource_index/parent_prefix_path/lslidar_driver
+[108.279s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/environment/ament_prefix_path.sh
+[108.326s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/environment/ament_prefix_path.dsv
+[108.371s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/environment/path.sh
+[108.417s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/environment/path.dsv
+[108.462s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/local_setup.bash
+[108.508s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/local_setup.sh
+[108.553s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/local_setup.zsh
+[108.599s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/local_setup.dsv
+[108.644s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/package.dsv
+[108.691s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/ament_index/resource_index/packages/lslidar_driver
+[108.736s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[108.780s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[108.828s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/cmake/lslidar_driverConfig.cmake
+[108.873s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/cmake/lslidar_driverConfig-version.cmake
+[108.920s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_driver/share/lslidar_driver/package.xml
+[108.971s] Invoked command in '/home/cowbot/cowbot_ws/build/lslidar_driver' returned '0': CMAKE_PREFIX_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs:/home/cowbot/cowbot_ws/install/serial_motor_msgs:/home/cowbot/cowbot_ws/install/lslidar_driver:/home/cowbot/cowbot_ws/install/cowbot_description:/home/cowbot/cowbot_ws/install/cowbot_bringup:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib PYTHONPATH=/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/build/serial_motor:/home/cowbot/cowbot_ws/install/serial_motor/lib/python3.12/site-packages:/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/lslidar_driver

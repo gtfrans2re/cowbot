@@ -1,0 +1,4 @@
+source;share/cowbot_gazebo/local_setup.bash
+source;share/cowbot_gazebo/local_setup.dsv
+source;share/cowbot_gazebo/local_setup.sh
+source;share/cowbot_gazebo/local_setup.zsh

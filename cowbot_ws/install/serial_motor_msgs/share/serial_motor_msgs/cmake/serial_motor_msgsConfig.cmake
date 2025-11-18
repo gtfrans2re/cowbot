@@ -1,0 +1,1 @@
+/home/cowbot/cowbot_ws/build/serial_motor_msgs/ament_cmake_core/serial_motor_msgsConfig.cmake

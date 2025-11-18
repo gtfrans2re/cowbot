@@ -1,0 +1,27 @@
+[0.060s] Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_gazebo -- -j4 -l4
+[0.384s] Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_gazebo -- -j4 -l4
+[0.386s] Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_gazebo
+[0.461s] -- Install configuration: ""
+[0.468s] -- Execute custom install script
+[0.477s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/launch/botbox_world.launch.xml
+[0.477s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/launch/one_cowbot_warehouse.launch.py
+[0.478s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/launch/spawn.launch.xml
+[0.483s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/launch/spawn_cowbot.launch.xml
+[0.487s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/launch/spawn_in_gazebo.launch.py
+[0.488s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/gazebo/cowbot_plugins.gazebo
+[0.492s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/ament_index/resource_index/package_run_dependencies/cowbot_gazebo
+[0.493s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/ament_index/resource_index/parent_prefix_path/cowbot_gazebo
+[0.494s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/environment/ament_prefix_path.sh
+[0.500s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/environment/ament_prefix_path.dsv
+[0.502s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/environment/path.sh
+[0.504s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/environment/path.dsv
+[0.506s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/local_setup.bash
+[0.507s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/local_setup.sh
+[0.509s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/local_setup.zsh
+[0.509s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/local_setup.dsv
+[0.511s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/package.dsv
+[0.552s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/ament_index/resource_index/packages/cowbot_gazebo
+[0.557s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/cmake/cowbot_gazeboConfig.cmake
+[0.559s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/cmake/cowbot_gazeboConfig-version.cmake
+[0.567s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_gazebo/share/cowbot_gazebo/package.xml
+[0.586s] Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_gazebo

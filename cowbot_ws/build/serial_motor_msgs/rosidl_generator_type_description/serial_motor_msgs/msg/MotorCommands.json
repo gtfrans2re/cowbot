@@ -1,0 +1,46 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "serial_motor_msgs/msg/MotorCommands",
+      "fields": [
+        {
+          "name": "is_pwm",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "mot_1_req_rad_sec",
+          "type": {
+            "type_id": 10,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "mot_2_req_rad_sec",
+          "type": {
+            "type_id": 10,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "serial_motor_msgs/msg/MotorCommands",
+      "hash_string": "RIHS01_76b38a80c87ceea373c4ad7ba311ee86b4bf956c8c4de12828826694beac89d6"
+    }
+  ]
+}

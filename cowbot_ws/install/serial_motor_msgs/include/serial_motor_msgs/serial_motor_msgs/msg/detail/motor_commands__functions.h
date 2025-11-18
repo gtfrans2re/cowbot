@@ -1,0 +1,1 @@
+/home/cowbot/cowbot_ws/build/serial_motor_msgs/rosidl_generator_c/serial_motor_msgs/msg/detail/motor_commands__functions.h

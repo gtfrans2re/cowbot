@@ -1,0 +1,1 @@
+/home/cowbot/cowbot_ws/build/lslidar_msgs/ament_cmake_environment_hooks/local_setup.sh

@@ -1,0 +1,1 @@
+/home/cowbot/cowbot_ws/build/serial_motor_msgs/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake

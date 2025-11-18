@@ -1,0 +1,259 @@
+[0.076s] Invoking command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/serial_motor_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/serial_motor_msgs
+[0.479s] -- The C compiler identification is GNU 13.3.0
+[0.862s] -- The CXX compiler identification is GNU 13.3.0
+[0.975s] -- Detecting C compiler ABI info
+[1.581s] -- Detecting C compiler ABI info - done
+[1.631s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.640s] -- Detecting C compile features
+[1.641s] -- Detecting C compile features - done
+[1.698s] -- Detecting CXX compiler ABI info
+[2.360s] -- Detecting CXX compiler ABI info - done
+[2.411s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.412s] -- Detecting CXX compile features
+[2.416s] -- Detecting CXX compile features - done
+[2.439s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.551s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[4.116s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.397s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[4.446s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.831s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.148s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[8.875s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[11.217s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[14.247s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[14.270s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[15.015s] -- Found PythonExtra: /usr/bin/python3  
+[17.402s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[17.609s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[17.818s] -- Added test 'lint_cmake' to check CMake code style
+[17.831s] -- Added test 'xmllint' to check XML markup files
+[17.859s] -- Configuring done (17.7s)
+[18.100s] -- Generating done (0.2s)
+[18.160s] -- Build files have been written to: /home/cowbot/cowbot_ws/build/serial_motor_msgs
+[18.186s] Invoked command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/serial_motor_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/serial_motor_msgs
+[18.192s] Invoking command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/serial_motor_msgs -- -j4 -l4
+[18.486s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[18.532s] [  1%] Built target ament_cmake_python_symlink_serial_motor_msgs
+[19.534s] [  1%] Built target serial_motor_msgs__rosidl_generator_type_description
+[19.593s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[19.668s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[20.073s] running egg_info
+[20.078s] creating serial_motor_msgs.egg-info
+[20.257s] writing serial_motor_msgs.egg-info/PKG-INFO
+[20.258s] writing dependency_links to serial_motor_msgs.egg-info/dependency_links.txt
+[20.261s] writing top-level names to serial_motor_msgs.egg-info/top_level.txt
+[20.265s] writing manifest file 'serial_motor_msgs.egg-info/SOURCES.txt'
+[20.847s] reading manifest file 'serial_motor_msgs.egg-info/SOURCES.txt'
+[20.855s] writing manifest file 'serial_motor_msgs.egg-info/SOURCES.txt'
+[21.267s] [  5%] Built target ament_cmake_python_build_serial_motor_msgs_egg
+[22.145s] [  5%] Built target serial_motor_msgs__cpp
+[22.475s] [  7%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/motor_vels__functions.c.o[0m
+[22.500s] [  9%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/motor_vels__description.c.o[0m
+[22.503s] [ 11%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/motor_commands__description.c.o[0m
+[22.515s] [ 12%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/motor_vels__type_support.c.o[0m
+[22.876s] [ 14%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/motor_commands__functions.c.o[0m
+[23.053s] [ 16%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/motor_commands__type_support.c.o[0m
+[23.071s] [ 18%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/encoder_vals__description.c.o[0m
+[23.278s] [ 20%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/encoder_vals__functions.c.o[0m
+[23.297s] [ 22%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/serial_motor_msgs/msg/detail/encoder_vals__type_support.c.o[0m
+[23.659s] [ 24%] [32m[1mLinking C shared library libserial_motor_msgs__rosidl_generator_c.so[0m
+[23.883s] [ 24%] Built target serial_motor_msgs__rosidl_generator_c
+[23.952s] [ 25%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[23.971s] [ 27%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[23.996s] [ 29%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[24.024s] [ 31%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[25.712s] [ 33%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/serial_motor_msgs/msg/motor_vels__type_support.cpp.o[0m
+[25.927s] [ 35%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/serial_motor_msgs/msg/motor_vels__type_support.cpp.o[0m
+[26.422s] [ 37%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/serial_motor_msgs/msg/motor_commands__type_support.cpp.o[0m
+[26.842s] [ 38%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/serial_motor_msgs/msg/detail/motor_vels__type_support.c.o[0m
+[26.875s] [ 40%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/serial_motor_msgs/msg/encoder_vals__type_support.cpp.o[0m
+[27.275s] [ 42%] [32m[1mLinking CXX shared library libserial_motor_msgs__rosidl_typesupport_c.so[0m
+[27.310s] [ 44%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/serial_motor_msgs/msg/detail/motor_commands__type_support.c.o[0m
+[27.663s] [ 44%] Built target serial_motor_msgs__rosidl_typesupport_c
+[27.739s] [ 46%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[27.752s] [ 48%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/serial_motor_msgs/msg/detail/encoder_vals__type_support.c.o[0m
+[27.991s] [ 50%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/serial_motor_msgs/msg/detail/motor_vels__type_support_c.cpp.o[0m
+[28.356s] [ 51%] [32m[1mLinking C shared library libserial_motor_msgs__rosidl_typesupport_introspection_c.so[0m
+[28.893s] [ 51%] Built target serial_motor_msgs__rosidl_typesupport_introspection_c
+[29.051s] [ 53%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[30.332s] [ 55%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/serial_motor_msgs/msg/motor_commands__type_support.cpp.o[0m
+[31.080s] [ 57%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/serial_motor_msgs/msg/detail/dds_fastrtps/motor_vels__type_support.cpp.o[0m
+[31.389s] [ 59%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/serial_motor_msgs/msg/detail/motor_vels__type_support.cpp.o[0m
+[35.697s] [ 61%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/serial_motor_msgs/msg/encoder_vals__type_support.cpp.o[0m
+[35.714s] [ 62%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/serial_motor_msgs/msg/detail/motor_commands__type_support_c.cpp.o[0m
+[36.738s] [ 64%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/serial_motor_msgs/msg/detail/motor_commands__type_support.cpp.o[0m
+[37.726s] [ 66%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/serial_motor_msgs/msg/detail/dds_fastrtps/motor_commands__type_support.cpp.o[0m
+[40.767s] [ 68%] [32m[1mLinking CXX shared library libserial_motor_msgs__rosidl_typesupport_cpp.so[0m
+[41.107s] [ 68%] Built target serial_motor_msgs__rosidl_typesupport_cpp
+[41.214s] [ 70%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/serial_motor_msgs/msg/detail/encoder_vals__type_support_c.cpp.o[0m
+[42.302s] [ 72%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/serial_motor_msgs/msg/detail/encoder_vals__type_support.cpp.o[0m
+[43.271s] [ 74%] [32mBuilding CXX object CMakeFiles/serial_motor_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/serial_motor_msgs/msg/detail/dds_fastrtps/encoder_vals__type_support.cpp.o[0m
+[46.531s] [ 75%] [32m[1mLinking CXX shared library libserial_motor_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[47.134s] [ 75%] Built target serial_motor_msgs__rosidl_typesupport_introspection_cpp
+[47.606s] [ 77%] [32m[1mLinking CXX shared library libserial_motor_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[48.085s] [ 77%] Built target serial_motor_msgs__rosidl_typesupport_fastrtps_c
+[49.057s] [ 79%] [32m[1mLinking CXX shared library libserial_motor_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[49.519s] [ 79%] Built target serial_motor_msgs__rosidl_typesupport_fastrtps_cpp
+[49.653s] [ 79%] Built target serial_motor_msgs
+[49.833s] [ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[53.469s] [ 81%] Built target serial_motor_msgs__py
+[53.729s] [ 83%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_py.dir/rosidl_generator_py/serial_motor_msgs/msg/_motor_vels_s.c.o[0m
+[53.738s] [ 85%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_py.dir/rosidl_generator_py/serial_motor_msgs/msg/_motor_commands_s.c.o[0m
+[55.507s] [ 87%] [32mBuilding C object CMakeFiles/serial_motor_msgs__rosidl_generator_py.dir/rosidl_generator_py/serial_motor_msgs/msg/_encoder_vals_s.c.o[0m
+[56.469s] [ 88%] [32m[1mLinking C shared library libserial_motor_msgs__rosidl_generator_py.so[0m
+[56.973s] [ 88%] Built target serial_motor_msgs__rosidl_generator_py
+[57.256s] [ 90%] [32mBuilding C object CMakeFiles/serial_motor_msgs_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/serial_motor_msgs/_serial_motor_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[57.267s] [ 92%] [32mBuilding C object CMakeFiles/serial_motor_msgs_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/serial_motor_msgs/_serial_motor_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[58.344s] [ 94%] [32m[1mLinking C shared module rosidl_generator_py/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_introspection_c.so[0m
+[58.471s] [ 96%] [32m[1mLinking C shared module rosidl_generator_py/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_fastrtps_c.so[0m
+[58.732s] [ 96%] Built target serial_motor_msgs_s__rosidl_typesupport_introspection_c
+[58.802s] [ 96%] Built target serial_motor_msgs_s__rosidl_typesupport_fastrtps_c
+[58.936s] [ 98%] [32mBuilding C object CMakeFiles/serial_motor_msgs_s__rosidl_typesupport_c.dir/rosidl_generator_py/serial_motor_msgs/_serial_motor_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[59.606s] [100%] [32m[1mLinking C shared module rosidl_generator_py/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_c.so[0m
+[59.802s] [100%] Built target serial_motor_msgs_s__rosidl_typesupport_c
+[59.885s] Invoked command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/serial_motor_msgs -- -j4 -l4
+[59.892s] Invoking command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/serial_motor_msgs
+[59.941s] -- Install configuration: ""
+[59.945s] -- Execute custom install script
+[59.949s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/ament_index/resource_index/rosidl_interfaces/serial_motor_msgs
+[60.004s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/MotorVels.json
+[60.064s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/MotorCommands.json
+[60.118s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/EncoderVals.json
+[60.181s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__functions.h
+[60.235s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__struct.h
+[60.287s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__type_support.h
+[60.348s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__functions.h
+[60.400s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__struct.h
+[60.462s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__type_support.h
+[60.517s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__functions.h
+[60.576s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__struct.h
+[60.626s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__type_support.h
+[60.675s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/encoder_vals.h
+[60.729s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/motor_commands.h
+[60.784s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/motor_vels.h
+[60.837s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/rosidl_generator_c__visibility_control.h
+[60.894s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/library_path.sh
+[60.955s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/library_path.dsv
+[61.005s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__rosidl_typesupport_fastrtps_c.h
+[61.051s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__rosidl_typesupport_fastrtps_c.h
+[61.097s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__rosidl_typesupport_fastrtps_c.h
+[61.143s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[61.186s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__rosidl_typesupport_introspection_c.h
+[61.230s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__rosidl_typesupport_introspection_c.h
+[61.281s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__rosidl_typesupport_introspection_c.h
+[61.335s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[61.387s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__builder.hpp
+[61.438s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__struct.hpp
+[61.487s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__traits.hpp
+[61.531s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__type_support.hpp
+[61.576s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__builder.hpp
+[61.619s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__struct.hpp
+[61.665s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__traits.hpp
+[61.710s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__type_support.hpp
+[61.755s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__builder.hpp
+[61.800s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__struct.hpp
+[61.845s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__traits.hpp
+[61.892s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__type_support.hpp
+[61.937s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/encoder_vals.hpp
+[61.983s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/motor_commands.hpp
+[62.031s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/motor_vels.hpp
+[62.075s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[62.123s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__rosidl_typesupport_fastrtps_cpp.hpp
+[62.169s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__rosidl_typesupport_fastrtps_cpp.hpp
+[62.213s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__rosidl_typesupport_fastrtps_cpp.hpp
+[62.259s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[62.304s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/encoder_vals__rosidl_typesupport_introspection_cpp.hpp
+[62.348s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_commands__rosidl_typesupport_introspection_cpp.hpp
+[62.391s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/include/serial_motor_msgs/serial_motor_msgs/msg/detail/motor_vels__rosidl_typesupport_introspection_cpp.hpp
+[62.433s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/pythonpath.sh
+[62.478s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/pythonpath.dsv
+[62.523s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs-0.0.0-py3.12.egg-info/PKG-INFO
+[62.569s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs-0.0.0-py3.12.egg-info/SOURCES.txt
+[62.612s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs-0.0.0-py3.12.egg-info/dependency_links.txt
+[62.657s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs-0.0.0-py3.12.egg-info/top_level.txt
+[62.706s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/__init__.py
+[62.750s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/_serial_motor_msgs_s.ep.rosidl_typesupport_c.c
+[62.794s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/_serial_motor_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[62.839s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/_serial_motor_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[62.884s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/__init__.py
+[62.929s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_encoder_vals.py
+[62.973s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_encoder_vals_s.c
+[63.017s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_motor_commands.py
+[63.063s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_motor_commands_s.c
+[63.107s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_motor_vels.py
+[63.151s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_motor_vels_s.c
+[63.197s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_c.so
+[63.242s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_fastrtps_c.so
+[63.285s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_introspection_c.so
+[63.333s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_fastrtps_c.so
+[63.334s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_introspection_c.so
+[63.335s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/serial_motor_msgs_s__rosidl_typesupport_c.so
+[63.336s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/MotorVels.idl
+[63.381s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/MotorCommands.idl
+[63.424s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/EncoderVals.idl
+[63.469s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/MotorVels.msg
+[63.514s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/MotorCommands.msg
+[63.559s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/msg/EncoderVals.msg
+[63.603s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/ament_index/resource_index/package_run_dependencies/serial_motor_msgs
+[63.649s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/ament_index/resource_index/parent_prefix_path/serial_motor_msgs
+[63.693s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/ament_prefix_path.sh
+[63.739s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/ament_prefix_path.dsv
+[63.783s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/path.sh
+[63.826s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/environment/path.dsv
+[63.872s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/local_setup.bash
+[63.915s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/local_setup.sh
+[63.962s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/local_setup.zsh
+[64.006s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/local_setup.dsv
+[64.051s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/package.dsv
+[64.095s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/ament_index/resource_index/packages/serial_motor_msgs
+[64.141s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/rosidl_cmake-extras.cmake
+[64.186s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[64.233s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[64.277s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[64.321s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[64.368s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[64.430s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[64.487s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgsConfig.cmake
+[64.541s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgsConfig-version.cmake
+[64.587s] -- Symlinking: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/package.xml
+[64.637s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_generator_c.so
+[64.642s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_generator_c.so" to ""
+[64.643s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_fastrtps_c.so
+[64.647s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[64.649s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_introspection_c.so
+[64.652s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_introspection_c.so" to ""
+[64.653s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_c.so
+[64.656s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_c.so" to ""
+[64.657s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_fastrtps_cpp.so
+[64.660s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[64.661s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_introspection_cpp.so
+[64.664s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[64.665s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_cpp.so
+[64.669s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_typesupport_cpp.so" to ""
+[64.890s] Listing '/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs'...
+[64.891s] Compiling '/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/__init__.py'...
+[64.893s] Listing '/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg'...
+[64.894s] Compiling '/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/__init__.py'...
+[64.895s] Compiling '/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_encoder_vals.py'...
+[64.897s] Compiling '/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_motor_commands.py'...
+[64.897s] Compiling '/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/python3.12/site-packages/serial_motor_msgs/msg/_motor_vels.py'...
+[64.932s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_generator_py.so
+[64.937s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/serial_motor_msgs/lib/libserial_motor_msgs__rosidl_generator_py.so" to ""
+[64.939s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_generator_cExport.cmake
+[64.945s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_generator_cExport-noconfig.cmake
+[64.948s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[64.950s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[64.952s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_introspection_cExport.cmake
+[64.954s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[64.955s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_cExport.cmake
+[64.957s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[64.959s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_generator_cppExport.cmake
+[64.960s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[64.962s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[64.964s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[64.966s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[64.968s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_cppExport.cmake
+[64.970s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/serial_motor_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[64.971s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_generator_pyExport.cmake
+[64.973s] -- Installing: /home/cowbot/cowbot_ws/install/serial_motor_msgs/share/serial_motor_msgs/cmake/export_serial_motor_msgs__rosidl_generator_pyExport-noconfig.cmake
+[64.986s] Invoked command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/serial_motor_msgs

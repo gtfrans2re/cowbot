@@ -1,0 +1,322 @@
+[0.092s] Invoking command in '/home/cowbot/cowbot_ws/build/lslidar_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/lslidar_msgs
+[0.512s] -- The C compiler identification is GNU 13.3.0
+[0.942s] -- The CXX compiler identification is GNU 13.3.0
+[1.046s] -- Detecting C compiler ABI info
+[1.693s] -- Detecting C compiler ABI info - done
+[1.734s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.735s] -- Detecting C compile features
+[1.737s] -- Detecting C compile features - done
+[1.791s] -- Detecting CXX compiler ABI info
+[2.479s] -- Detecting CXX compiler ABI info - done
+[2.518s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.523s] -- Detecting CXX compile features
+[2.523s] -- Detecting CXX compile features - done
+[2.543s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.712s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[4.273s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.518s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[4.820s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[4.921s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[5.018s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.154s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.386s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[5.732s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[5.856s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[5.885s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[9.820s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[14.116s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[15.810s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[15.831s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[16.576s] -- Found PythonExtra: /usr/bin/python3  
+[19.008s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[19.326s] -- Added test 'copyright' to check source files copyright and LICENSE
+[19.343s] -- Added test 'lint_cmake' to check CMake code style
+[19.355s] -- Added test 'xmllint' to check XML markup files
+[19.428s] -- Configuring done (19.3s)
+[19.796s] -- Generating done (0.3s)
+[19.885s] -- Build files have been written to: /home/cowbot/cowbot_ws/build/lslidar_msgs
+[19.967s] Invoked command in '/home/cowbot/cowbot_ws/build/lslidar_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/lslidar_msgs
+[19.971s] Invoking command in '/home/cowbot/cowbot_ws/build/lslidar_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/lslidar_msgs -- -j4 -l4
+[20.332s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[20.497s] [  1%] Built target ament_cmake_python_symlink_lslidar_msgs
+[22.293s] [  1%] Built target lslidar_msgs__rosidl_generator_type_description
+[22.369s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[22.436s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[22.525s] running egg_info
+[22.534s] creating lslidar_msgs.egg-info
+[22.749s] writing lslidar_msgs.egg-info/PKG-INFO
+[22.752s] writing dependency_links to lslidar_msgs.egg-info/dependency_links.txt
+[22.753s] writing top-level names to lslidar_msgs.egg-info/top_level.txt
+[22.754s] writing manifest file 'lslidar_msgs.egg-info/SOURCES.txt'
+[23.320s] reading manifest file 'lslidar_msgs.egg-info/SOURCES.txt'
+[23.327s] writing manifest file 'lslidar_msgs.egg-info/SOURCES.txt'
+[23.662s] [  4%] Built target ament_cmake_python_build_lslidar_msgs_egg
+[26.411s] [  4%] Built target lslidar_msgs__cpp
+[27.895s] [  5%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_difop__functions.c.o[0m
+[27.897s] [  6%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_difop__description.c.o[0m
+[27.922s] [  8%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_packet__description.c.o[0m
+[27.931s] [  9%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_difop__type_support.c.o[0m
+[28.276s] [ 10%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_packet__functions.c.o[0m
+[28.419s] [ 12%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_packet__type_support.c.o[0m
+[28.536s] [ 13%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_point__description.c.o[0m
+[28.676s] [ 14%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_point__functions.c.o[0m
+[28.737s] [ 16%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_point__type_support.c.o[0m
+[28.934s] [ 17%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_scan__description.c.o[0m
+[28.941s] [ 18%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_scan__functions.c.o[0m
+[29.151s] [ 20%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_scan__type_support.c.o[0m
+[29.237s] [ 21%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_sweep__description.c.o[0m
+[29.431s] [ 22%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_sweep__functions.c.o[0m
+[29.476s] [ 24%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_c.dir/rosidl_generator_c/lslidar_msgs/msg/detail/lslidar_sweep__type_support.c.o[0m
+[30.117s] [ 25%] [32m[1mLinking C shared library liblslidar_msgs__rosidl_generator_c.so[0m
+[30.646s] [ 25%] Built target lslidar_msgs__rosidl_generator_c
+[30.788s] [ 27%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[30.794s] [ 29%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[30.794s] [ 28%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[30.795s] [ 31%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[34.283s] [ 32%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/lslidar_msgs/msg/detail/lslidar_difop__type_support.c.o[0m
+[34.685s] [ 33%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/lslidar_msgs/msg/detail/lslidar_packet__type_support.c.o[0m
+[35.035s] [ 35%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/lslidar_msgs/msg/detail/lslidar_point__type_support.c.o[0m
+[35.505s] [ 36%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/lslidar_msgs/msg/lslidar_difop__type_support.cpp.o[0m
+[35.554s] [ 37%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/lslidar_msgs/msg/detail/lslidar_scan__type_support.c.o[0m
+[35.971s] [ 39%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/lslidar_msgs/msg/detail/lslidar_sweep__type_support.c.o[0m
+[36.177s] [ 40%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/lslidar_msgs/msg/lslidar_packet__type_support.cpp.o[0m
+[36.205s] [ 41%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/lslidar_msgs/msg/detail/lslidar_difop__type_support.cpp.o[0m
+[36.395s] [ 43%] [32m[1mLinking C shared library liblslidar_msgs__rosidl_typesupport_introspection_c.so[0m
+[36.453s] [ 44%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/lslidar_msgs/msg/detail/dds_fastrtps/lslidar_difop__type_support.cpp.o[0m
+[36.545s] [ 45%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/lslidar_msgs/msg/lslidar_point__type_support.cpp.o[0m
+[36.965s] [ 47%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/lslidar_msgs/msg/lslidar_scan__type_support.cpp.o[0m
+[36.975s] [ 47%] Built target lslidar_msgs__rosidl_typesupport_introspection_c
+[37.111s] [ 48%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[37.308s] [ 50%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/lslidar_msgs/msg/lslidar_sweep__type_support.cpp.o[0m
+[37.978s] [ 51%] [32m[1mLinking CXX shared library liblslidar_msgs__rosidl_typesupport_c.so[0m
+[38.595s] [ 51%] Built target lslidar_msgs__rosidl_typesupport_c
+[38.705s] [ 52%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[41.631s] [ 54%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/lslidar_msgs/msg/lslidar_difop__type_support.cpp.o[0m
+[41.875s] [ 55%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/lslidar_msgs/msg/detail/lslidar_packet__type_support.cpp.o[0m
+[42.755s] [ 56%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/lslidar_msgs/msg/detail/dds_fastrtps/lslidar_packet__type_support.cpp.o[0m
+[43.593s] [ 58%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/lslidar_msgs/msg/detail/lslidar_difop__type_support_c.cpp.o[0m
+[46.078s] [ 59%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/lslidar_msgs/msg/lslidar_packet__type_support.cpp.o[0m
+[46.651s] [ 60%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/lslidar_msgs/msg/detail/lslidar_point__type_support.cpp.o[0m
+[47.129s] [ 62%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/lslidar_msgs/msg/detail/lslidar_packet__type_support_c.cpp.o[0m
+[49.397s] [ 63%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/lslidar_msgs/msg/lslidar_point__type_support.cpp.o[0m
+[49.698s] [ 64%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/lslidar_msgs/msg/detail/dds_fastrtps/lslidar_point__type_support.cpp.o[0m
+[49.907s] [ 66%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/lslidar_msgs/msg/detail/lslidar_scan__type_support.cpp.o[0m
+[50.347s] [ 67%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/lslidar_msgs/msg/detail/lslidar_point__type_support_c.cpp.o[0m
+[52.001s] [ 68%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/lslidar_msgs/msg/lslidar_scan__type_support.cpp.o[0m
+[53.157s] [ 70%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/lslidar_msgs/msg/detail/lslidar_sweep__type_support.cpp.o[0m
+[53.738s] [ 71%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/lslidar_msgs/msg/detail/lslidar_scan__type_support_c.cpp.o[0m
+[54.474s] [ 72%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/lslidar_msgs/msg/detail/dds_fastrtps/lslidar_scan__type_support.cpp.o[0m
+[55.181s] [ 74%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/lslidar_msgs/msg/lslidar_sweep__type_support.cpp.o[0m
+[56.123s] [ 75%] [32m[1mLinking CXX shared library liblslidar_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[56.853s] [ 75%] Built target lslidar_msgs__rosidl_typesupport_introspection_cpp
+[56.939s] [ 77%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/lslidar_msgs/msg/detail/lslidar_sweep__type_support_c.cpp.o[0m
+[57.521s] [ 78%] [32mBuilding CXX object CMakeFiles/lslidar_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/lslidar_msgs/msg/detail/dds_fastrtps/lslidar_sweep__type_support.cpp.o[0m
+[58.909s] [ 79%] [32m[1mLinking CXX shared library liblslidar_msgs__rosidl_typesupport_cpp.so[0m
+[59.185s] [ 79%] Built target lslidar_msgs__rosidl_typesupport_cpp
+[60.683s] [ 81%] [32m[1mLinking CXX shared library liblslidar_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[61.002s] [ 81%] Built target lslidar_msgs__rosidl_typesupport_fastrtps_c
+[61.165s] [ 82%] [32m[1mLinking CXX shared library liblslidar_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[61.563s] [ 82%] Built target lslidar_msgs__rosidl_typesupport_fastrtps_cpp
+[61.666s] [ 82%] Built target lslidar_msgs
+[61.773s] [ 83%] [34m[1mGenerating Python code for ROS interfaces[0m
+[64.848s] [ 83%] Built target lslidar_msgs__py
+[64.972s] [ 85%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_py.dir/rosidl_generator_py/lslidar_msgs/msg/_lslidar_difop_s.c.o[0m
+[64.974s] [ 86%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_py.dir/rosidl_generator_py/lslidar_msgs/msg/_lslidar_packet_s.c.o[0m
+[65.691s] [ 87%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_py.dir/rosidl_generator_py/lslidar_msgs/msg/_lslidar_scan_s.c.o[0m
+[65.736s] [ 89%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_py.dir/rosidl_generator_py/lslidar_msgs/msg/_lslidar_sweep_s.c.o[0m
+[66.467s] [ 90%] [32mBuilding C object CMakeFiles/lslidar_msgs__rosidl_generator_py.dir/rosidl_generator_py/lslidar_msgs/msg/_lslidar_point_s.c.o[0m
+[67.170s] [ 91%] [32m[1mLinking C shared library liblslidar_msgs__rosidl_generator_py.so[0m
+[67.421s] [ 91%] Built target lslidar_msgs__rosidl_generator_py
+[67.539s] [ 93%] [32mBuilding C object CMakeFiles/lslidar_msgs_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/lslidar_msgs/_lslidar_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[67.539s] [ 94%] [32mBuilding C object CMakeFiles/lslidar_msgs_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/lslidar_msgs/_lslidar_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[68.188s] [ 95%] [32m[1mLinking C shared module rosidl_generator_py/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_introspection_c.so[0m
+[68.209s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_fastrtps_c.so[0m
+[68.402s] [ 97%] Built target lslidar_msgs_s__rosidl_typesupport_introspection_c
+[68.409s] [ 97%] Built target lslidar_msgs_s__rosidl_typesupport_fastrtps_c
+[68.508s] [ 98%] [32mBuilding C object CMakeFiles/lslidar_msgs_s__rosidl_typesupport_c.dir/rosidl_generator_py/lslidar_msgs/_lslidar_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[69.103s] [100%] [32m[1mLinking C shared module rosidl_generator_py/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_c.so[0m
+[69.275s] [100%] Built target lslidar_msgs_s__rosidl_typesupport_c
+[69.337s] Invoked command in '/home/cowbot/cowbot_ws/build/lslidar_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/lslidar_msgs -- -j4 -l4
+[69.343s] Invoking command in '/home/cowbot/cowbot_ws/build/lslidar_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/lslidar_msgs
+[69.398s] -- Install configuration: ""
+[69.401s] -- Execute custom install script
+[69.403s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/ament_index/resource_index/rosidl_interfaces/lslidar_msgs
+[69.467s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarDifop.json
+[69.529s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarPacket.json
+[69.593s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarPoint.json
+[69.635s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarScan.json
+[69.683s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarSweep.json
+[69.735s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__functions.h
+[69.782s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__struct.h
+[69.829s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__type_support.h
+[69.876s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__functions.h
+[69.922s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__struct.h
+[69.970s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__type_support.h
+[70.015s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__functions.h
+[70.060s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__struct.h
+[70.108s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__type_support.h
+[70.153s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__functions.h
+[70.199s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__struct.h
+[70.244s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__type_support.h
+[70.290s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__functions.h
+[70.335s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__struct.h
+[70.382s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__type_support.h
+[70.427s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_difop.h
+[70.473s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_packet.h
+[70.519s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_point.h
+[70.564s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_scan.h
+[70.610s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_sweep.h
+[70.656s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/rosidl_generator_c__visibility_control.h
+[70.704s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/library_path.sh
+[70.749s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/library_path.dsv
+[70.798s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__rosidl_typesupport_fastrtps_c.h
+[70.843s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__rosidl_typesupport_fastrtps_c.h
+[70.889s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__rosidl_typesupport_fastrtps_c.h
+[70.934s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__rosidl_typesupport_fastrtps_c.h
+[70.980s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__rosidl_typesupport_fastrtps_c.h
+[71.024s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[71.073s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__builder.hpp
+[71.118s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__struct.hpp
+[71.166s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__traits.hpp
+[71.213s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__type_support.hpp
+[71.259s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__builder.hpp
+[71.305s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__struct.hpp
+[71.350s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__traits.hpp
+[71.395s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__type_support.hpp
+[71.441s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__builder.hpp
+[71.487s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__struct.hpp
+[71.532s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__traits.hpp
+[71.578s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__type_support.hpp
+[71.624s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__builder.hpp
+[71.670s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__struct.hpp
+[71.715s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__traits.hpp
+[71.761s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__type_support.hpp
+[71.806s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__builder.hpp
+[71.851s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__struct.hpp
+[71.896s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__traits.hpp
+[71.941s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__type_support.hpp
+[71.987s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_difop.hpp
+[72.032s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_packet.hpp
+[72.078s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_point.hpp
+[72.122s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_scan.hpp
+[72.168s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/lslidar_sweep.hpp
+[72.213s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[72.263s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__rosidl_typesupport_fastrtps_cpp.hpp
+[72.307s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__rosidl_typesupport_fastrtps_cpp.hpp
+[72.353s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__rosidl_typesupport_fastrtps_cpp.hpp
+[72.399s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__rosidl_typesupport_fastrtps_cpp.hpp
+[72.444s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__rosidl_typesupport_fastrtps_cpp.hpp
+[72.491s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[72.540s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__rosidl_typesupport_introspection_c.h
+[72.586s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__rosidl_typesupport_introspection_c.h
+[72.632s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__rosidl_typesupport_introspection_c.h
+[72.678s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__rosidl_typesupport_introspection_c.h
+[72.723s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__rosidl_typesupport_introspection_c.h
+[72.770s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[72.818s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_difop__rosidl_typesupport_introspection_cpp.hpp
+[72.871s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_packet__rosidl_typesupport_introspection_cpp.hpp
+[72.934s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_point__rosidl_typesupport_introspection_cpp.hpp
+[73.000s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_scan__rosidl_typesupport_introspection_cpp.hpp
+[73.051s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/include/lslidar_msgs/lslidar_msgs/msg/detail/lslidar_sweep__rosidl_typesupport_introspection_cpp.hpp
+[73.096s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/pythonpath.sh
+[73.140s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/pythonpath.dsv
+[73.186s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs-1.2.0-py3.12.egg-info/PKG-INFO
+[73.232s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs-1.2.0-py3.12.egg-info/SOURCES.txt
+[73.277s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs-1.2.0-py3.12.egg-info/dependency_links.txt
+[73.322s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs-1.2.0-py3.12.egg-info/top_level.txt
+[73.372s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/__init__.py
+[73.416s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/_lslidar_msgs_s.ep.rosidl_typesupport_c.c
+[73.464s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/_lslidar_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[73.509s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/_lslidar_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[73.554s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_c.so
+[73.599s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_fastrtps_c.so
+[73.643s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_introspection_c.so
+[73.689s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/__init__.py
+[73.735s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_difop.py
+[73.781s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_difop_s.c
+[73.827s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_packet.py
+[73.872s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_packet_s.c
+[73.917s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_point.py
+[73.964s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_point_s.c
+[74.008s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_scan.py
+[74.053s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_scan_s.c
+[74.099s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_sweep.py
+[74.143s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_sweep_s.c
+[74.190s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_fastrtps_c.so
+[74.192s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_introspection_c.so
+[74.193s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/lslidar_msgs_s__rosidl_typesupport_c.so
+[74.194s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarDifop.idl
+[74.241s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarPacket.idl
+[74.286s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarPoint.idl
+[74.331s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarScan.idl
+[74.377s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarSweep.idl
+[74.422s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarDifop.msg
+[74.468s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarPacket.msg
+[74.512s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarPoint.msg
+[74.557s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarScan.msg
+[74.624s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/msg/LslidarSweep.msg
+[74.674s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/ament_index/resource_index/package_run_dependencies/lslidar_msgs
+[74.720s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/ament_index/resource_index/parent_prefix_path/lslidar_msgs
+[74.766s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/ament_prefix_path.sh
+[74.811s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/ament_prefix_path.dsv
+[74.855s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/path.sh
+[74.900s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/environment/path.dsv
+[74.945s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/local_setup.bash
+[74.990s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/local_setup.sh
+[75.035s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/local_setup.zsh
+[75.081s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/local_setup.dsv
+[75.126s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/package.dsv
+[75.172s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/ament_index/resource_index/packages/lslidar_msgs
+[75.217s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/rosidl_cmake-extras.cmake
+[75.263s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[75.308s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[75.354s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[75.399s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[75.445s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[75.491s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[75.536s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgsConfig.cmake
+[75.581s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgsConfig-version.cmake
+[75.626s] -- Symlinking: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/package.xml
+[75.671s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_generator_c.so
+[75.674s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_generator_c.so" to ""
+[75.675s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_fastrtps_c.so
+[75.678s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[75.679s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_fastrtps_cpp.so
+[75.683s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[75.684s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_introspection_c.so
+[75.687s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_introspection_c.so" to ""
+[75.688s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_c.so
+[75.691s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_c.so" to ""
+[75.692s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_introspection_cpp.so
+[75.695s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[75.695s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_cpp.so
+[75.698s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_typesupport_cpp.so" to ""
+[75.901s] Listing '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs'...
+[75.902s] Compiling '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/__init__.py'...
+[75.903s] Listing '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg'...
+[75.904s] Compiling '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/__init__.py'...
+[75.904s] Compiling '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_difop.py'...
+[75.905s] Compiling '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_packet.py'...
+[75.906s] Compiling '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_point.py'...
+[75.907s] Compiling '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_scan.py'...
+[75.908s] Compiling '/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/python3.12/site-packages/lslidar_msgs/msg/_lslidar_sweep.py'...
+[75.932s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_generator_py.so
+[75.935s] -- Set non-toolchain portion of runtime path of "/home/cowbot/cowbot_ws/install/lslidar_msgs/lib/liblslidar_msgs__rosidl_generator_py.so" to ""
+[75.935s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_generator_cExport.cmake
+[75.937s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_generator_cExport-noconfig.cmake
+[75.939s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[75.941s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[75.943s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_generator_cppExport.cmake
+[75.945s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[75.947s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[75.948s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_introspection_cExport.cmake
+[75.950s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[75.952s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_cExport.cmake
+[75.953s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[75.955s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[75.956s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[75.958s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_cppExport.cmake
+[75.959s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/lslidar_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[75.961s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_generator_pyExport.cmake
+[75.962s] -- Installing: /home/cowbot/cowbot_ws/install/lslidar_msgs/share/lslidar_msgs/cmake/export_lslidar_msgs__rosidl_generator_pyExport-noconfig.cmake
+[75.972s] Invoked command in '/home/cowbot/cowbot_ws/build/lslidar_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/lslidar_msgs

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="cowbot">
+    
+    <xacro:arg name="robot_name" default="cowbot"/>
+    
+    <!-- Add dummy root link to avoid KDL inertia warning -->
+    <link name="dummy_root"/>
+    
+    <!-- Fixed joint connecting dummy root to base_link -->
+    <joint name="dummy_root_to_base" type="fixed">
+        <parent link="dummy_root"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+    
+    <!-- Include the base robot URDF -->
+    <xacro:include filename="$(find cowbot_description)/onshape/robot.urdf"/>
+    
+</robot>

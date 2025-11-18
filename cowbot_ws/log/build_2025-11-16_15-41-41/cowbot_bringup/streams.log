@@ -1,0 +1,45 @@
+[0.073s] Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/cowbot_bringup -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/cowbot_bringup
+[0.466s] -- The C compiler identification is GNU 13.3.0
+[0.857s] -- The CXX compiler identification is GNU 13.3.0
+[0.966s] -- Detecting C compiler ABI info
+[1.557s] -- Detecting C compiler ABI info - done
+[1.602s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.606s] -- Detecting C compile features
+[1.607s] -- Detecting C compile features - done
+[1.668s] -- Detecting CXX compiler ABI info
+[2.299s] -- Detecting CXX compiler ABI info - done
+[2.357s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.358s] -- Detecting CXX compile features
+[2.361s] -- Detecting CXX compile features - done
+[2.388s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.535s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[4.090s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.378s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[5.002s] -- Added test 'lint_cmake' to check CMake code style
+[5.013s] -- Added test 'xmllint' to check XML markup files
+[5.029s] -- Configuring done (4.9s)
+[5.053s] -- Generating done (0.0s)
+[5.068s] -- Build files have been written to: /home/cowbot/cowbot_ws/build/cowbot_bringup
+[5.098s] Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/cowbot_bringup -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/cowbot_bringup
+[5.103s] Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_bringup -- -j4 -l4
+[5.368s] Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_bringup -- -j4 -l4
+[5.438s] Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_bringup
+[5.515s] -- Install configuration: ""
+[5.519s] -- Execute custom install script
+[5.527s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup//launch/bringup.launch.xml
+[5.580s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/ament_index/resource_index/package_run_dependencies/cowbot_bringup
+[5.643s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/ament_index/resource_index/parent_prefix_path/cowbot_bringup
+[5.695s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/environment/ament_prefix_path.sh
+[5.750s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/environment/ament_prefix_path.dsv
+[5.810s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/environment/path.sh
+[5.871s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/environment/path.dsv
+[5.938s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/local_setup.bash
+[5.997s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/local_setup.sh
+[6.067s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/local_setup.zsh
+[6.139s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/local_setup.dsv
+[6.195s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/package.dsv
+[6.257s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/ament_index/resource_index/packages/cowbot_bringup
+[6.324s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/cmake/cowbot_bringupConfig.cmake
+[6.403s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/cmake/cowbot_bringupConfig-version.cmake
+[6.469s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_bringup/share/cowbot_bringup/package.xml
+[6.532s] Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_bringup

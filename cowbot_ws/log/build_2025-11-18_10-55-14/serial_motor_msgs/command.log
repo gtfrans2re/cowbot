@@ -1,0 +1,6 @@
+Invoking command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/serial_motor_msgs -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/serial_motor_msgs
+Invoked command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake /home/cowbot/cowbot_ws/src/serial_motor_msgs -DCMAKE_INSTALL_PREFIX=/home/cowbot/cowbot_ws/install/serial_motor_msgs
+Invoking command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/serial_motor_msgs -- -j4 -l4
+Invoked command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/serial_motor_msgs -- -j4 -l4
+Invoking command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/serial_motor_msgs
+Invoked command in '/home/cowbot/cowbot_ws/build/serial_motor_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/serial_motor_msgs

@@ -1,0 +1,1 @@
+/home/cowbot/cowbot_ws/src/Lslidar_ROS2_driver/lslidar_msgs/msg/LslidarPoint.msg

@@ -1,0 +1,44 @@
+[0.100s] Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_description -- -j4 -l4
+[0.441s] Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_description -- -j4 -l4
+[0.455s] Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_description
+[0.595s] -- Install configuration: ""
+[0.605s] -- Execute custom install script
+[0.612s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/launch/robot_state_publisher.launch.py
+[0.620s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/launch/robot_state_publisher_hardware.launch.py
+[0.626s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/api-keys.sh
+[0.631s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/base_link.part
+[0.632s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/base_link.stl
+[0.635s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/fastbot_motor.part
+[0.639s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/fastbot_motor.stl
+[0.646s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/lslidar_n10.part
+[0.648s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/lslidar_n10.stl
+[0.648s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/pololu_ball_caster.part
+[0.656s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/pololu_ball_caster.stl
+[0.659s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/raspicam.part
+[0.660s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/raspicam.stl
+[0.663s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/tire_d65x25_v1.part
+[0.671s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/tire_d65x25_v1.stl
+[0.672s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/wheel_d65x25_v1.part
+[0.675s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/assets/wheel_d65x25_v1.stl
+[0.676s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/config.json
+[0.686s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/cowbot.xacro
+[0.687s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/cowbot_multi.xacro
+[0.687s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/onshape/robot.urdf
+[0.695s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/models/urdf/cowbot_multi_sim.xacro
+[0.699s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/models/urdf/robot.urdf
+[0.700s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/ament_index/resource_index/package_run_dependencies/cowbot_description
+[0.709s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/ament_index/resource_index/parent_prefix_path/cowbot_description
+[0.719s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/environment/ament_prefix_path.sh
+[0.723s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/environment/ament_prefix_path.dsv
+[0.730s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/environment/path.sh
+[0.737s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/environment/path.dsv
+[0.742s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/local_setup.bash
+[0.753s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/local_setup.sh
+[0.761s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/local_setup.zsh
+[0.762s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/local_setup.dsv
+[0.766s] -- Symlinking: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/package.dsv
+[0.947s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/ament_index/resource_index/packages/cowbot_description
+[0.949s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/cmake/cowbot_descriptionConfig.cmake
+[0.956s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/cmake/cowbot_descriptionConfig-version.cmake
+[0.957s] -- Up-to-date symlink: /home/cowbot/cowbot_ws/install/cowbot_description/share/cowbot_description/package.xml
+[1.236s] Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cowbot/cowbot_ws/install/serial_motor:/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_description

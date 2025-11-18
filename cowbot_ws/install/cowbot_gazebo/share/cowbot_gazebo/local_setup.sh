@@ -1,0 +1,1 @@
+/home/cowbot/cowbot_ws/build/cowbot_gazebo/ament_cmake_environment_hooks/local_setup.sh

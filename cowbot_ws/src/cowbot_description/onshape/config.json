@@ -1,0 +1,7 @@
+{
+    "documentId": "a9f47f90d5283d1e9459463d", # replace with your own (24-digit string after https://cad.onshape.com/documents/)
+    "outputFormat": "urdf",
+    "packageName": "cowbot_description/onshape",
+    "robotName": "cowbot",
+    "assemblyName": "cowbot"
+}

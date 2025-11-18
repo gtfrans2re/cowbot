@@ -1,0 +1,1 @@
+/home/cowbot/cowbot_ws/src/cowbot_gazebo/launch/one_cowbot_warehouse.launch.py

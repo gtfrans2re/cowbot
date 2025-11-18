@@ -1,0 +1,2 @@
+[console_scripts]
+motor_driver = serial_motor.motor_driver:main

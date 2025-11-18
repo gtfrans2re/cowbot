@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:arg name="robot_name" default="cowbot"/>
+
+    <!-- Include cowbot body (from onshape) -->
+    <xacro:include filename="$(find cowbot_description)/onshape/cowbot.xacro"/>
+    
+    <!-- Include gazebo plugins -->
+    <xacro:include filename="$(find cowbot_gazebo)/gazebo/cowbot_plugins.gazebo"/>
+
+    <!-- Instantiate cowbot body macro -->
+    <xacro:cowbot_body robot_name="$(arg robot_name)"/>
+    
+    <!-- Instantiate gazebo plugins macro -->
+    <xacro:cowbot_plugins robot_name="$(arg robot_name)"/>
+
+</robot>

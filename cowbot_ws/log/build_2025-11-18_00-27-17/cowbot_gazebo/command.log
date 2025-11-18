@@ -1,0 +1,4 @@
+Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_gazebo -- -j4 -l4
+Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/cowbot/cowbot_ws/build/cowbot_gazebo -- -j4 -l4
+Invoking command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_gazebo
+Invoked command in '/home/cowbot/cowbot_ws/build/cowbot_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/cowbot/cowbot_ws/build/cowbot_gazebo
