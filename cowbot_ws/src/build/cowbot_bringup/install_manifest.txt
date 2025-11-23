@@ -1,3 +1,4 @@
+/home/cowbot/cowbot_ws/src/install/cowbot_bringup/share/cowbot_bringup//launch/teleop.launch.py
 /home/cowbot/cowbot_ws/src/install/cowbot_bringup/share/cowbot_bringup//launch/bringup.launch.xml
 /home/cowbot/cowbot_ws/src/install/cowbot_bringup/share/ament_index/resource_index/package_run_dependencies/cowbot_bringup
 /home/cowbot/cowbot_ws/src/install/cowbot_bringup/share/ament_index/resource_index/parent_prefix_path/cowbot_bringup
