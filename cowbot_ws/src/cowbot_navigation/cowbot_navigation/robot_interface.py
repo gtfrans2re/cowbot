@@ -24,6 +24,9 @@ class RobotInterface(Node):
         self.declare_parameter('cmd_vel_linear', 0.0)
         self.declare_parameter('cmd_vel_angular', 0.0)
         
+        # Safety: motors only publish cmd_vel when enabled
+        self.declare_parameter('motors_enabled', False)
+        
         # Declare parameters for scan ranges (will be updated from scan topic)
         self.declare_parameter('scan_right_ray_range', float('inf'))
         self.declare_parameter('scan_front_right_ray_range', float('inf'))
@@ -85,7 +88,7 @@ class RobotInterface(Node):
         )
         
         # Create publisher for cmd_vel
-        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
+        self.cmd_vel_pub = self.create_publisher(Twist, '/cowbot/cmd_vel', 10)
         
         # Create timer to publish cmd_vel based on parameters
         self.timer = self.create_timer(0.1, self._timer_callback)
@@ -241,6 +244,10 @@ class RobotInterface(Node):
     
     def _timer_callback(self):
         """Publish cmd_vel based on parameters."""
+        # Safety gate: only publish if motors enabled
+        if not self.get_parameter('motors_enabled').value:
+            return
+        
         linear = self.get_parameter('cmd_vel_linear').value
         angular = self.get_parameter('cmd_vel_angular').value
         
@@ -268,6 +275,14 @@ class RobotInterface(Node):
         self.set_parameters([Parameter('cmd_vel_angular', Parameter.Type.DOUBLE, float(value))])
     
     @property
+    def motors_enabled(self):
+        return self.get_parameter('motors_enabled').value
+    
+    @motors_enabled.setter
+    def motors_enabled(self, value: bool):
+        self.set_parameters([Parameter('motors_enabled', Parameter.Type.BOOL, bool(value))])
+    
+    @property
     def scan_ranges(self):
         with self._scan_lock:
             return self._scan_ranges.copy()
@@ -286,7 +301,8 @@ class RobotInterface(Node):
 
 
 def main(args=None):
-    rclpy.init(args=args)
+    if not rclpy.ok():
+        rclpy.init(args=args)
     robot_interface = RobotInterface()
     
     try:
@@ -295,7 +311,8 @@ def main(args=None):
         pass
     finally:
         robot_interface.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == '__main__':
