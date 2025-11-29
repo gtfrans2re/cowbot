@@ -10,9 +10,9 @@ source /home/cowbot/cowbot_ws/install/setup.bash
 echo ""
 echo "Checking if package is built..."
 if ros2 pkg list | grep -q "cowbot_navigation"; then
-    echo "✓ cowbot_navigation package found"
+    echo "[OK] cowbot_navigation package found"
 else
-    echo "✗ cowbot_navigation package NOT found"
+    echo "[FAIL] cowbot_navigation package NOT found"
     echo "Run: cd ~/cowbot_ws && colcon build --packages-select cowbot_navigation"
     exit 1
 fi
@@ -21,27 +21,27 @@ echo ""
 echo "Checking executables..."
 for exec in robot_interface robot_control_classed robot_control_noclass; do
     if ros2 pkg executables cowbot_navigation | grep -q "$exec"; then
-        echo "✓ $exec available"
+        echo "[OK] $exec available"
     else
-        echo "✗ $exec NOT available"
+        echo "[FAIL] $exec NOT available"
     fi
 done
 
 echo ""
 echo "Checking launch files..."
 if [ -f "/home/cowbot/cowbot_ws/install/cowbot_navigation/share/cowbot_navigation/launch/robot_interface.launch.py" ]; then
-    echo "✓ robot_interface.launch.py installed"
+    echo "[OK] robot_interface.launch.py installed"
 else
-    echo "✗ robot_interface.launch.py NOT installed"
+    echo "[FAIL] robot_interface.launch.py NOT installed"
 fi
 
 echo ""
 echo "Checking bash scripts..."
 for script in robot_functions.bash robot_statistics.bash; do
     if [ -f "/home/cowbot/cowbot_ws/install/cowbot_navigation/share/cowbot_navigation/scripts/$script" ]; then
-        echo "✓ $script installed"
+        echo "[OK] $script installed"
     else
-        echo "✗ $script NOT installed"
+        echo "[FAIL] $script NOT installed"
     fi
 done
 
