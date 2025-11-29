@@ -27,6 +27,7 @@ setup(
             'robot_interface = cowbot_navigation.robot_interface:main',
             'robot_control = cowbot_navigation.robot_control_client:main',
             'robot_control_debug = cowbot_navigation.robot_control_debug:main',
+            'camera_obstacle_detector = cowbot_navigation.camera_obstacle_detector:main',
         ],
     },
 )
