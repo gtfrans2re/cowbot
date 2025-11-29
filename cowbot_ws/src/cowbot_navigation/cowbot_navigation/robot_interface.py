@@ -7,14 +7,16 @@ from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import Imu
+from std_msgs.msg import Float32MultiArray
 import math
 import threading
 
 
 class RobotInterface(Node):
     """
-    RobotInterface node that bridges LiDAR scan data and cmd_vel commands
-    with a parameter-based interface for easy scripting access.
+    RobotInterface node that bridges LiDAR scan data, camera obstacle data,
+    and cmd_vel commands with a parameter-based interface for easy scripting access.
+    Implements sensor fusion between LiDAR and camera.
     """
 
     def __init__(self):
@@ -33,6 +35,20 @@ class RobotInterface(Node):
         self.declare_parameter('scan_front_ray_range', float('inf'))
         self.declare_parameter('scan_front_left_ray_range', float('inf'))
         self.declare_parameter('scan_left_ray_range', float('inf'))
+        
+        # Declare parameters for fused sensor ranges
+        self.declare_parameter('fused_right_range', float('inf'))
+        self.declare_parameter('fused_front_right_range', float('inf'))
+        self.declare_parameter('fused_front_range', float('inf'))
+        self.declare_parameter('fused_front_left_range', float('inf'))
+        self.declare_parameter('fused_left_range', float('inf'))
+        
+        # Declare parameters for sensor confidence/agreement
+        self.declare_parameter('sensor_agreement_right', 1.0)
+        self.declare_parameter('sensor_agreement_front_right', 1.0)
+        self.declare_parameter('sensor_agreement_front', 1.0)
+        self.declare_parameter('sensor_agreement_front_left', 1.0)
+        self.declare_parameter('sensor_agreement_left', 1.0)
         
         # Declare parameters for odometry
         self.declare_parameter('odom_distance', 0.0)
@@ -59,6 +75,17 @@ class RobotInterface(Node):
         self._scan_angle_increment = 0.0
         self._scan_lock = threading.Lock()
         
+        # Internal state for camera obstacle ranges
+        # Sectors: [right, front_right, front, front_left, left]
+        self._camera_ranges = [float('inf')] * 5
+        self._camera_lock = threading.Lock()
+        self._camera_available = False
+        
+        # Sensor fusion configuration
+        self.lidar_weight = 0.6  # LiDAR more reliable for accurate distance
+        self.camera_weight = 0.4  # Camera better for close-range and texture
+        self.agreement_threshold = 0.2  # Range difference threshold for agreement (meters)
+        
         # Internal state for odometry
         self._odom_x = 0.0
         self._odom_y = 0.0
@@ -70,6 +97,13 @@ class RobotInterface(Node):
             LaserScan,
             '/scan',
             self._scan_callback,
+            10
+        )
+        
+        self.camera_ranges_sub = self.create_subscription(
+            Float32MultiArray,
+            '/camera/obstacle_ranges',
+            self._camera_ranges_callback,
             10
         )
         
@@ -93,7 +127,7 @@ class RobotInterface(Node):
         # Create timer to publish cmd_vel based on parameters
         self.timer = self.create_timer(0.1, self._timer_callback)
         
-        self.get_logger().info('RobotInterface node initialized')
+        self.get_logger().info('RobotInterface node initialized with sensor fusion')
     
     def _scan_callback(self, msg: LaserScan):
         """Process incoming laser scan data and update parameters."""
@@ -118,8 +152,103 @@ class RobotInterface(Node):
                 Parameter('scan_front_left_ray_range', Parameter.Type.DOUBLE, front_left),
                 Parameter('scan_left_ray_range', Parameter.Type.DOUBLE, left),
             ])
+            
+            # Perform sensor fusion
+            self._fuse_sensors()
+            
         except Exception as e:
             self.get_logger().warn(f'Error updating scan parameters: {e}')
+    
+    def _camera_ranges_callback(self, msg: Float32MultiArray):
+        """Process incoming camera obstacle ranges."""
+        with self._camera_lock:
+            if len(msg.data) >= 5:
+                self._camera_ranges = list(msg.data[:5])
+                self._camera_available = True
+                
+                # Perform sensor fusion
+                self._fuse_sensors()
+    
+    def _fuse_sensors(self):
+        """
+        Fuse LiDAR and camera sensor data.
+        Uses conservative approach: minimum range from either sensor.
+        Calculates sensor agreement score for decision making.
+        """
+        lidar_ranges = [
+            self.get_parameter('scan_right_ray_range').value,
+            self.get_parameter('scan_front_right_ray_range').value,
+            self.get_parameter('scan_front_ray_range').value,
+            self.get_parameter('scan_front_left_ray_range').value,
+            self.get_parameter('scan_left_ray_range').value,
+        ]
+        
+        with self._camera_lock:
+            camera_ranges = self._camera_ranges.copy()
+            camera_available = self._camera_available
+        
+        fused_ranges = []
+        agreement_scores = []
+        
+        for i in range(5):
+            lidar_range = lidar_ranges[i]
+            camera_range = camera_ranges[i] if camera_available else float('inf')
+            
+            # Conservative fusion: use minimum range
+            if math.isinf(lidar_range) and math.isinf(camera_range):
+                fused_range = float('inf')
+            elif math.isinf(lidar_range):
+                fused_range = camera_range
+            elif math.isinf(camera_range):
+                fused_range = lidar_range
+            else:
+                # Both sensors have valid readings
+                # Use weighted average if close, minimum if disagreement
+                range_diff = abs(lidar_range - camera_range)
+                
+                if range_diff < self.agreement_threshold:
+                    # Sensors agree - weighted average
+                    fused_range = (self.lidar_weight * lidar_range + 
+                                 self.camera_weight * camera_range)
+                else:
+                    # Sensors disagree - use minimum (conservative)
+                    fused_range = min(lidar_range, camera_range)
+            
+            fused_ranges.append(fused_range)
+            
+            # Calculate agreement score (1.0 = full agreement, 0.0 = strong disagreement)
+            if math.isinf(lidar_range) or math.isinf(camera_range):
+                agreement = 0.5  # Partial confidence with only one sensor
+            else:
+                range_diff = abs(lidar_range - camera_range)
+                # Normalize to 0-1 scale (0.5m difference = 0 agreement)
+                agreement = max(0.0, 1.0 - (range_diff / 0.5))
+            
+            agreement_scores.append(agreement)
+        
+        # Update fused parameters
+        param_names = [
+            'fused_right_range',
+            'fused_front_right_range',
+            'fused_front_range',
+            'fused_front_left_range',
+            'fused_left_range',
+        ]
+        
+        agreement_names = [
+            'sensor_agreement_right',
+            'sensor_agreement_front_right',
+            'sensor_agreement_front',
+            'sensor_agreement_front_left',
+            'sensor_agreement_left',
+        ]
+        
+        params = []
+        for i in range(5):
+            params.append(Parameter(param_names[i], Parameter.Type.DOUBLE, fused_ranges[i]))
+            params.append(Parameter(agreement_names[i], Parameter.Type.DOUBLE, agreement_scores[i]))
+        
+        self.set_parameters(params)
     
     def _get_min_range_in_sector(self, center_angle: float, width: float) -> float:
         """Get minimum range in a sector defined by center angle and width."""
