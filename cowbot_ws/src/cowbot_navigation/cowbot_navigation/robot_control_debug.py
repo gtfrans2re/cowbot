@@ -207,7 +207,7 @@ def main():
     try:
         client.obstacle_avoidance_loop()
     except KeyboardInterrupt:
-        print("\n🚧 Control stopped")
+        print("\n[STOPPED] Control stopped")
     finally:
         client.stop_robot()
         executor.shutdown()
