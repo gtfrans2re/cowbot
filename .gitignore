@@ -28,6 +28,11 @@ __pycache__/
 *.swo
 *~
 
+# System/server files
+.antigravity-server/
+.dotnet/
+.wget-hsts
+
 # System files
 .DS_Store
 Thumbs.db

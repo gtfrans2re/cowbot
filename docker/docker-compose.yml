@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  cowbot-simulation:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: cowbot-simulation:jazzy
+    container_name: cowbot_simulation
+    network_mode: host
+    privileged: true
+    
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - XAUTHORITY=${XAUTHORITY}
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+      - ROS_LOCALHOST_ONLY=0
+      - IGN_PARTITION=default
+    
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${XAUTHORITY:-$HOME/.Xauthority}:/root/.Xauthority:ro
+      - ../cowbot_ws:/ros2_ws/src/cowbot_ws:rw
+      - gazebo_models:/root/.gazebo/models
+      - gazebo_worlds:/root/.gazebo/worlds
+      - gazebo_logs:/root/.gazebo/server-*
+      - simulation_data:/root/simulation_data
+    
+    working_dir: /ros2_ws
+    
+    stdin_open: true
+    tty: true
+    
+    # Use host network for ROS 2 DDS communication
+    # GPU support for Intel Arc (experimental, may need adjustments)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: i915
+              capabilities: [compute, utility]
+
+volumes:
+  gazebo_models:
+    driver: local
+  gazebo_worlds:
+    driver: local
+  gazebo_logs:
+    driver: local
+  simulation_data:
+    driver: local
+
