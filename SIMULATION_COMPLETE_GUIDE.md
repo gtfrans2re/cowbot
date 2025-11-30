@@ -137,12 +137,10 @@ cd cowbot/cowbot_ws
 ```bash
 sudo apt update
 sudo apt install -y \
-    ros-jazzy-gazebo-ros-pkgs \
-    ros-jazzy-gazebo-ros2-control \
+    gz-jazzy \
     ros-jazzy-rviz2 \
     ros-jazzy-joint-state-publisher \
-    ros-joint-state-publisher-gui \
-    gz-jazzy \
+    ros-jazzy-joint-state-publisher-gui \
     ros-jazzy-cv-bridge \
     ros-jazzy-image-transport \
     ros-jazzy-tf2-tools \

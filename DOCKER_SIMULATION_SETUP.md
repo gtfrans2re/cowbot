@@ -57,8 +57,7 @@ FROM osrf/ros:jazzy-desktop-full
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
-    ros-jazzy-gazebo-ros-pkgs \
-    ros-jazzy-gazebo-ros2-control \
+    gz-jazzy \
     ros-jazzy-rviz2 \
     ros-jazzy-joint-state-publisher \
     ros-jazzy-joint-state-publisher-gui \

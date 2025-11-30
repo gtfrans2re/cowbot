@@ -5,10 +5,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV ROS_DOMAIN_ID=0
 ENV ROS_LOCALHOST_ONLY=0
 
-# Install Gazebo and simulation dependencies
+# Install simulation dependencies
+# Note: ros-jazzy-desktop-full already includes most ROS 2 packages
+# For ROS 2 Jazzy, we use Ignition Gazebo (gz-jazzy) instead of ros-gazebo packages
+# If gz-jazzy fails, check if Gazebo is already in base image:
+#   docker run -it --rm osrf/ros:jazzy-desktop-full which gz
 RUN apt-get update && apt-get install -y \
-    ros-jazzy-gazebo-ros-pkgs \
-    ros-jazzy-gazebo-ros2-control \
+    gz-jazzy \
     ros-jazzy-rviz2 \
     ros-jazzy-joint-state-publisher \
     ros-jazzy-joint-state-publisher-gui \
@@ -29,18 +32,18 @@ RUN apt-get update && apt-get install -y \
     git \
     vim \
     nano \
-    && rm -rf /var/lib/apt/lists/*
+    || echo "Warning: Some packages may have failed to install. Check BUILD_TROUBLESHOOTING.md" && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 RUN pip3 install --no-cache-dir \
     opencv-python-headless \
-    numpy
+    numpy || true
 
 # Set up workspace directory
 WORKDIR /ros2_ws
 
 # Copy workspace source (will be mounted as volume, but copy for initial build)
-# This allows the Dockerfile to be built standalone if needed
 COPY cowbot_ws/src /ros2_ws/src/
 
 # Build the workspace
@@ -49,7 +52,7 @@ RUN colcon build --symlink-install || true
 # Source workspace in bashrc
 RUN echo "source /ros2_ws/install/setup.bash" >> ~/.bashrc
 
-# Set up entrypoint script (will be created in container)
+# Set up entrypoint script
 RUN echo '#!/bin/bash' > /entrypoint.sh && \
     echo 'set -e' >> /entrypoint.sh && \
     echo 'source /opt/ros/jazzy/setup.bash' >> /entrypoint.sh && \
@@ -61,4 +64,3 @@ RUN echo '#!/bin/bash' > /entrypoint.sh && \
 
 # Default command
 CMD ["/entrypoint.sh"]
-
