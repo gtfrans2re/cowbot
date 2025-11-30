@@ -13,7 +13,7 @@ from launch.actions import (
     ExecuteProcess,
 )
 from launch.conditions import IfCondition, UnlessCondition
-from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.launch_description_sources import PythonLaunchDescriptionSource, AnyLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -82,7 +82,7 @@ def generate_launch_description():
 
     # Launch Gazebo world
     gazebo_world_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
+        AnyLaunchDescriptionSource(
             os.path.join(gazebo_pkg, "launch", "botbox_world.launch.xml")
         ),
         launch_arguments={
@@ -93,7 +93,7 @@ def generate_launch_description():
 
     # Spawn robot in Gazebo (delayed)
     spawn_robot_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
+        AnyLaunchDescriptionSource(
             os.path.join(gazebo_pkg, "launch", "spawn_cowbot.launch.xml")
         ),
         launch_arguments={
