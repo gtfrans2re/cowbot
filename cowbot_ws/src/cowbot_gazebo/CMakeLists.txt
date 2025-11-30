@@ -9,7 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 install(
-  DIRECTORY launch gazebo
+  DIRECTORY launch gazebo rviz worlds
   DESTINATION share/${PROJECT_NAME}
 )
 
