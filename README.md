@@ -645,87 +645,61 @@ Contributions are welcome! Please ensure:
 
 ---
 
----
+## Simulation Setup (Local Machine)
 
-## Docker Simulation Setup
-
-For running Gazebo and RViz simulation on your local machine using Docker (recommended for resource-constrained systems like RPi).
+For running Gazebo and RViz simulation on your local machine. This is recommended for development and testing without requiring the physical robot hardware.
 
 ### Prerequisites
 
-- Docker installed (`docker --version`)
-- Docker Compose installed (`docker compose version`)
-- X11 display configured for GUI
+- ROS 2 Jazzy installed on local machine
+- Gazebo (Ignition Gazebo) installed
+- RViz2 installed
+- Sufficient system resources (RAM, GPU)
 
-### Quick Setup
+### Installation
 
 ```bash
-# 1. Install Docker (if not already installed)
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker $USER
-newgrp docker
-
-# 2. Configure X11 forwarding
-xhost +local:docker
-echo "xhost +local:docker" >> ~/.bashrc
-export DISPLAY=:0
-echo "export DISPLAY=:0" >> ~/.bashrc
-source ~/.bashrc
-
-# 3. Build Docker image
-cd ~/cowbot/docker
-docker compose build
-
-# 4. Launch simulation
-docker compose run --rm cowbot-simulation \
-    bash -c "colcon build --symlink-install && \
-             source install/setup.bash && \
-             ros2 launch cowbot_gazebo simulation_with_rviz.launch.py"
+# Install Gazebo and RViz
+sudo apt update
+sudo apt install -y \
+    gz-jazzy \
+    ros-jazzy-rviz2 \
+    ros-jazzy-joint-state-publisher \
+    ros-jazzy-joint-state-publisher-gui \
+    ros-jazzy-robot-state-publisher \
+    ros-jazzy-xacro
 ```
 
-### Common Issues
+### Launch Simulation
 
-**GPU device driver error:**
-- The GPU deploy section has been removed from `docker-compose.yml`
-- If you see this error, ensure you're using the latest `docker-compose.yml`
-
-**Duplicate packages error:**
-- This happens if workspace is copied in Dockerfile AND mounted as volume
-- Fixed: Dockerfile no longer copies workspace, only mounts at runtime
-- Solution: Rebuild the Docker image: `docker compose build --no-cache`
-
-**X11 display errors:**
 ```bash
-xhost +local:docker
-export DISPLAY=:0
+cd ~/cowbot/cowbot_ws
+source install/setup.bash
+
+# Launch Gazebo with robot and RViz
+ros2 launch cowbot_gazebo simulation_with_rviz.launch.py
 ```
 
-For detailed Docker documentation, see: `docker/README.md`
+This will:
+1. Start Gazebo simulation environment
+2. Spawn the robot in the world
+3. Launch RViz with pre-configured visualization
 
----
-
-## Network Bridge (RPi ↔ Local Machine)
+### Network Bridge (RPi ↔ Local Machine)
 
 To connect simulation on local machine with hardware on RPi:
 
-### On RPi (`~/.bashrc`):
+**On RPi (`~/.bashrc`):**
 ```bash
 export ROS_DOMAIN_ID=0
 export ROS_LOCALHOST_ONLY=0
 ```
 
-### On Local Machine (`~/.bashrc`):
+**On Local Machine (`~/.bashrc`):**
 ```bash
 export ROS_DOMAIN_ID=0
 export ROS_LOCALHOST_ONLY=0
 ```
-
-### Docker Container:
-Already configured in `docker-compose.yml`:
-- `ROS_DOMAIN_ID=0`
-- `ROS_LOCALHOST_ONLY=0`
-- `network_mode: host`
 
 Both machines can now communicate via ROS 2 topics!
 
@@ -737,7 +711,7 @@ For issues or questions:
 - Check the Troubleshooting section above
 - Review sensor fusion logs for errors
 - Verify hardware connections and power
-- For Docker issues, see `docker/README.md`
+- For simulation issues, see the Simulation Setup section above
 
 ---
 
