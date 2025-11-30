@@ -645,12 +645,99 @@ Contributions are welcome! Please ensure:
 
 ---
 
+---
+
+## Docker Simulation Setup
+
+For running Gazebo and RViz simulation on your local machine using Docker (recommended for resource-constrained systems like RPi).
+
+### Prerequisites
+
+- Docker installed (`docker --version`)
+- Docker Compose installed (`docker compose version`)
+- X11 display configured for GUI
+
+### Quick Setup
+
+```bash
+# 1. Install Docker (if not already installed)
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+newgrp docker
+
+# 2. Configure X11 forwarding
+xhost +local:docker
+echo "xhost +local:docker" >> ~/.bashrc
+export DISPLAY=:0
+echo "export DISPLAY=:0" >> ~/.bashrc
+source ~/.bashrc
+
+# 3. Build Docker image
+cd ~/cowbot/docker
+docker compose build
+
+# 4. Launch simulation
+docker compose run --rm cowbot-simulation \
+    bash -c "colcon build --symlink-install && \
+             source install/setup.bash && \
+             ros2 launch cowbot_gazebo simulation_with_rviz.launch.py"
+```
+
+### Common Issues
+
+**GPU device driver error:**
+- The GPU deploy section has been removed from `docker-compose.yml`
+- If you see this error, ensure you're using the latest `docker-compose.yml`
+
+**Duplicate packages error:**
+- This happens if workspace is copied in Dockerfile AND mounted as volume
+- Fixed: Dockerfile no longer copies workspace, only mounts at runtime
+- Solution: Rebuild the Docker image: `docker compose build --no-cache`
+
+**X11 display errors:**
+```bash
+xhost +local:docker
+export DISPLAY=:0
+```
+
+For detailed Docker documentation, see: `docker/README.md`
+
+---
+
+## Network Bridge (RPi ↔ Local Machine)
+
+To connect simulation on local machine with hardware on RPi:
+
+### On RPi (`~/.bashrc`):
+```bash
+export ROS_DOMAIN_ID=0
+export ROS_LOCALHOST_ONLY=0
+```
+
+### On Local Machine (`~/.bashrc`):
+```bash
+export ROS_DOMAIN_ID=0
+export ROS_LOCALHOST_ONLY=0
+```
+
+### Docker Container:
+Already configured in `docker-compose.yml`:
+- `ROS_DOMAIN_ID=0`
+- `ROS_LOCALHOST_ONLY=0`
+- `network_mode: host`
+
+Both machines can now communicate via ROS 2 topics!
+
+---
+
 ## Support
 
 For issues or questions:
 - Check the Troubleshooting section above
 - Review sensor fusion logs for errors
 - Verify hardware connections and power
+- For Docker issues, see `docker/README.md`
 
 ---
 

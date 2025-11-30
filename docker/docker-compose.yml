@@ -11,15 +11,15 @@ services:
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
-      - XAUTHORITY=${XAUTHORITY}
+      - XAUTHORITY=${XAUTHORITY:-${HOME}/.Xauthority}
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
       - ROS_LOCALHOST_ONLY=0
       - IGN_PARTITION=default
     
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ${XAUTHORITY:-$HOME/.Xauthority}:/root/.Xauthority:ro
-      - ../cowbot_ws:/ros2_ws/src/cowbot_ws:rw
+      - ${XAUTHORITY:-${HOME}/.Xauthority}:/root/.Xauthority:ro
+      - ../cowbot_ws/src:/ros2_ws/src:rw
       - gazebo_models:/root/.gazebo/models
       - gazebo_worlds:/root/.gazebo/worlds
       - gazebo_logs:/root/.gazebo/server-*
@@ -29,15 +29,6 @@ services:
     
     stdin_open: true
     tty: true
-    
-    # Use host network for ROS 2 DDS communication
-    # GPU support for Intel Arc (experimental, may need adjustments)
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: i915
-              capabilities: [compute, utility]
 
 volumes:
   gazebo_models:
@@ -48,4 +39,3 @@ volumes:
     driver: local
   simulation_data:
     driver: local
-

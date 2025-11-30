@@ -8,8 +8,6 @@ ENV ROS_LOCALHOST_ONLY=0
 # Install simulation dependencies
 # Note: ros-jazzy-desktop-full already includes most ROS 2 packages
 # For ROS 2 Jazzy, we use Ignition Gazebo (gz-jazzy) instead of ros-gazebo packages
-# If gz-jazzy fails, check if Gazebo is already in base image:
-#   docker run -it --rm osrf/ros:jazzy-desktop-full which gz
 RUN apt-get update && apt-get install -y \
     gz-jazzy \
     ros-jazzy-rviz2 \
@@ -32,8 +30,7 @@ RUN apt-get update && apt-get install -y \
     git \
     vim \
     nano \
-    || echo "Warning: Some packages may have failed to install. Check BUILD_TROUBLESHOOTING.md" && \
-    rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 RUN pip3 install --no-cache-dir \
@@ -43,14 +40,8 @@ RUN pip3 install --no-cache-dir \
 # Set up workspace directory
 WORKDIR /ros2_ws
 
-# Copy workspace source (will be mounted as volume, but copy for initial build)
-COPY cowbot_ws/src /ros2_ws/src/
-
-# Build the workspace
-RUN colcon build --symlink-install || true
-
-# Source workspace in bashrc
-RUN echo "source /ros2_ws/install/setup.bash" >> ~/.bashrc
+# Note: Workspace will be mounted as volume from docker-compose.yml at runtime
+# No need to copy or build here - it's mounted live for development
 
 # Set up entrypoint script
 RUN echo '#!/bin/bash' > /entrypoint.sh && \
