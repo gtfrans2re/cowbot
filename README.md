@@ -1,6 +1,6 @@
 # Cowbot - Autonomous Robotic System for Animal Welfare Monitoring
 
-An autonomous robotic system built on ROS 2 Humble, featuring advanced camera-LiDAR sensor fusion for robust obstacle detection and navigation.
+An autonomous robotic system built on ROS 2 Jazzy, featuring advanced camera-LiDAR sensor fusion for robust obstacle detection and navigation.
 
 ## Table of Contents
 
@@ -65,7 +65,7 @@ Cowbot is an autonomous robot designed for animal welfare monitoring. The system
    - All hardware powered on
 
 2. **Software**:
-   - ROS 2 Humble installed
+   - ROS 2 Jazzy installed
    - Workspace dependencies built
 
 ### Build the Workspace
@@ -157,17 +157,17 @@ cd cowbot/cowbot_ws
 # ROS 2 dependencies
 sudo apt update
 sudo apt install -y \
-    ros-humble-cv-bridge \
-    ros-humble-image-transport \
-    ros-humble-sensor-msgs \
-    ros-humble-geometry-msgs \
-    ros-humble-nav-msgs
+    ros-jazzy-cv-bridge \
+    ros-jazzy-image-transport \
+    ros-jazzy-sensor-msgs \
+    ros-jazzy-geometry-msgs \
+    ros-jazzy-nav-msgs
 
 # OpenCV (if not already installed)
 sudo apt install -y python3-opencv
 
 # v4l2 camera driver
-sudo apt install -y ros-humble-v4l2-camera
+sudo apt install -y ros-jazzy-v4l2-camera
 ```
 
 ### 3. Build Workspace
