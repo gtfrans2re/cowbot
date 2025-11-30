@@ -31,7 +31,6 @@ That's it! Your robot will use camera + LiDAR fusion for navigation.
 | `HARDWARE_SETUP_GUIDE.md` | Complete setup instructions & troubleshooting |
 | `QUICK_START.sh` | Command reference (run: `./QUICK_START.sh`) |
 | `SENSOR_FUSION_README.md` | Technical details & algorithms |
-| `IMPLEMENTATION_SUMMARY.md` | What was implemented |
 
 ## 🔍 Quick Verification
 

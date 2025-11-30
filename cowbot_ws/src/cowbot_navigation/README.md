@@ -7,7 +7,8 @@ LiDAR-based obstacle detection and avoidance system for Cowbot.
 This package provides obstacle detection and avoidance capabilities using LiDAR data. It includes:
 
 - **robot_interface**: ROS2 node that bridges LiDAR scan data, odometry, IMU, and cmd_vel
-- **Python control scripts**: Both OOP and procedural implementations
+- **robot_control**: Autonomous navigation with sensor fusion (camera + LiDAR)
+- **camera_obstacle_detector**: Camera-based obstacle detection node
 - **Bash scripts**: Simple patrol and statistics monitoring
 
 ## Package Structure
@@ -15,14 +16,18 @@ This package provides obstacle detection and avoidance capabilities using LiDAR 
 ```
 cowbot_navigation/
 ├── cowbot_navigation/
-│   ├── robot_interface.py         # Main interface node
-│   ├── robot_control_classed.py   # OOP implementation
-│   └── robot_control_noclass.py   # Procedural implementation
+│   ├── robot_interface.py              # Main interface node
+│   ├── robot_control_client.py         # Main control with sensor fusion
+│   ├── robot_control_debug.py          # Debug version with detailed logging
+│   ├── camera_obstacle_detector.py     # Camera obstacle detection
+│   ├── robot_control_classed.py        # Legacy: OOP implementation
+│   └── robot_control_noclass.py        # Legacy: Procedural implementation
 ├── scripts/
-│   ├── robot_functions.bash       # Bash helper functions
-│   └── robot_statistics.bash      # Telemetry monitoring
+│   ├── robot_functions.bash            # Bash helper functions
+│   └── robot_statistics.bash           # Telemetry monitoring
 └── launch/
-    └── robot_interface.launch.py  # Launch file
+    ├── robot_interface.launch.py       # Robot interface launch file
+    └── sensor_fusion.launch.py         # Complete sensor fusion system
 ```
 
 ## Installation
@@ -51,14 +56,14 @@ ros2 run cowbot_navigation robot_interface
 
 ### 2. Control Methods
 
-#### Python - OOP Version
+#### Python - Autonomous Navigation with Sensor Fusion (Recommended)
 ```bash
-ros2 run cowbot_navigation robot_control_classed
+ros2 run cowbot_navigation robot_control
 ```
 
-#### Python - Procedural Version
+#### Python - Debug Version
 ```bash
-ros2 run cowbot_navigation robot_control_noclass
+ros2 run cowbot_navigation robot_control_debug
 ```
 
 #### Bash - Simple Patrol
@@ -123,9 +128,11 @@ The enhanced obstacle avoidance algorithm:
 
 Edit the following parameters in the control scripts to tune behavior:
 
-- `forward_speed`: Linear velocity when moving forward (default: 0.2 m/s)
-- `turn_speed`: Angular velocity when turning (default: 0.5 rad/s)
-- `threshold`: Minimum safe distance (default: 0.4 m)
+- `forward_speed`: Linear velocity when moving forward (default: 0.08 m/s)
+- `turn_speed`: Angular velocity when turning (default: 0.15 rad/s)
+- `threshold`: Minimum safe distance (default: 0.6 m)
+
+Note: Legacy implementations (robot_control_classed.py, robot_control_noclass.py) are available but not registered as entry points. Use `robot_control` for the latest sensor fusion-enabled navigation.
 
 ## Integration with Existing System
 
