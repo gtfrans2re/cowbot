@@ -100,9 +100,11 @@ docker compose build
 
 # Watch the build process - it will:
 # 1. Download ROS 2 Jazzy desktop image
-# 2. Install Gazebo, RViz, and dependencies
+# 2. Install Gazebo (gz-jazzy) and RViz dependencies
 # 3. Build your workspace
 ```
+
+**Note:** If the build fails with package errors, check `docker/BUILD_TROUBLESHOOTING.md` for solutions.
 
 **What to expect:**
 - First build: 15-30 minutes (downloads base image)
