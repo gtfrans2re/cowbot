@@ -10,6 +10,7 @@ from sensor_msgs.msg import Imu
 from std_msgs.msg import Float32MultiArray
 import math
 import threading
+import time
 
 
 class RobotInterface(Node):
@@ -80,11 +81,19 @@ class RobotInterface(Node):
         self._camera_ranges = [float('inf')] * 5
         self._camera_lock = threading.Lock()
         self._camera_available = False
+        self._camera_last_update = 0.0  # Track camera data freshness
+        
+        # Temporal filtering for sensor fusion (reduce noise)
+        self._fused_ranges_history = [[] for _ in range(5)]  # History for each sector
+        self._history_window_size = 3  # Number of readings to average
+        self._max_range = 20.0  # Maximum valid range (LiDAR max)
+        self._min_range = 0.05  # Minimum valid range (sensor minimum)
         
         # Sensor fusion configuration
-        self.lidar_weight = 0.6  # LiDAR more reliable for accurate distance
-        self.camera_weight = 0.4  # Camera better for close-range and texture
-        self.agreement_threshold = 0.2  # Range difference threshold for agreement (meters)
+        self.lidar_weight = 0.65  # Increased LiDAR weight for more reliable distance
+        self.camera_weight = 0.35  # Camera for close-range and texture detection
+        self.agreement_threshold = 0.25  # Slightly increased for better tolerance
+        self.sensor_timeout = 2.0  # Camera data timeout in seconds
         
         # Internal state for odometry
         self._odom_x = 0.0
@@ -163,67 +172,121 @@ class RobotInterface(Node):
         """Process incoming camera obstacle ranges."""
         with self._camera_lock:
             if len(msg.data) >= 5:
-                self._camera_ranges = list(msg.data[:5])
+                # Validate and filter camera ranges
+                validated_ranges = []
+                max_camera_range = 2.0  # Camera max detection range
+                for r in msg.data[:5]:
+                    if math.isnan(r) or r < 0:
+                        validated_ranges.append(float('inf'))
+                    elif r > max_camera_range:
+                        validated_ranges.append(float('inf'))
+                    elif r < self._min_range:
+                        validated_ranges.append(self._min_range)
+                    else:
+                        validated_ranges.append(float(r))
+                
+                self._camera_ranges = validated_ranges
                 self._camera_available = True
+                self._camera_last_update = time.time()
                 
                 # Perform sensor fusion
                 self._fuse_sensors()
     
+    def _validate_range(self, r: float) -> float:
+        """Validate and clamp range value."""
+        if math.isnan(r) or math.isinf(r) or r < 0:
+            return float('inf')
+        if r < self._min_range:
+            return self._min_range
+        if r > self._max_range:
+            return float('inf')
+        return float(r)
+    
     def _fuse_sensors(self):
         """
-        Fuse LiDAR and camera sensor data.
-        Uses conservative approach: minimum range from either sensor.
-        Calculates sensor agreement score for decision making.
+        Enhanced sensor fusion with temporal filtering and improved validation.
+        Uses conservative approach: minimum range from either sensor when disagreement.
+        Calculates sensor agreement score for decision quality assessment.
         """
+        # Get LiDAR ranges with validation
         lidar_ranges = [
-            self.get_parameter('scan_right_ray_range').value,
-            self.get_parameter('scan_front_right_ray_range').value,
-            self.get_parameter('scan_front_ray_range').value,
-            self.get_parameter('scan_front_left_ray_range').value,
-            self.get_parameter('scan_left_ray_range').value,
+            self._validate_range(self.get_parameter('scan_right_ray_range').value),
+            self._validate_range(self.get_parameter('scan_front_right_ray_range').value),
+            self._validate_range(self.get_parameter('scan_front_ray_range').value),
+            self._validate_range(self.get_parameter('scan_front_left_ray_range').value),
+            self._validate_range(self.get_parameter('scan_left_ray_range').value),
         ]
         
+        # Get camera ranges with timeout check
+        current_time = time.time()
         with self._camera_lock:
             camera_ranges = self._camera_ranges.copy()
             camera_available = self._camera_available
+            # Check if camera data is fresh (not timed out)
+            camera_stale = (current_time - self._camera_last_update) > self.sensor_timeout
+            if camera_stale:
+                camera_available = False
         
         fused_ranges = []
         agreement_scores = []
         
         for i in range(5):
             lidar_range = lidar_ranges[i]
-            camera_range = camera_ranges[i] if camera_available else float('inf')
+            camera_range = camera_ranges[i] if (camera_available and not camera_stale) else float('inf')
             
-            # Conservative fusion: use minimum range
+            # Validate ranges
+            lidar_range = self._validate_range(lidar_range)
+            camera_range = self._validate_range(camera_range)
+            
+            # Fusion logic
             if math.isinf(lidar_range) and math.isinf(camera_range):
                 fused_range = float('inf')
+                agreement = 0.0  # No data from either sensor
             elif math.isinf(lidar_range):
+                # Only camera available
                 fused_range = camera_range
+                agreement = 0.4  # Lower confidence with single sensor
             elif math.isinf(camera_range):
+                # Only LiDAR available
                 fused_range = lidar_range
+                agreement = 0.6  # LiDAR is more reliable
             else:
                 # Both sensors have valid readings
-                # Use weighted average if close, minimum if disagreement
                 range_diff = abs(lidar_range - camera_range)
                 
                 if range_diff < self.agreement_threshold:
-                    # Sensors agree - weighted average
+                    # Sensors agree - use weighted average
                     fused_range = (self.lidar_weight * lidar_range + 
                                  self.camera_weight * camera_range)
+                    # High agreement score when sensors agree
+                    agreement = 1.0 - (range_diff / self.agreement_threshold) * 0.3
+                    agreement = max(0.7, agreement)  # Minimum 0.7 when in agreement
                 else:
-                    # Sensors disagree - use minimum (conservative)
+                    # Sensors disagree - use minimum (conservative safety approach)
                     fused_range = min(lidar_range, camera_range)
+                    # Agreement score based on relative difference
+                    avg_range = (lidar_range + camera_range) / 2.0
+                    relative_diff = range_diff / max(avg_range, 0.1)  # Normalize by average range
+                    agreement = max(0.0, 1.0 - relative_diff)
+            
+            # Apply temporal filtering to reduce noise
+            self._fused_ranges_history[i].append(fused_range)
+            if len(self._fused_ranges_history[i]) > self._history_window_size:
+                self._fused_ranges_history[i].pop(0)
+            
+            # Use median of recent readings for stability (more robust than mean)
+            history = self._fused_ranges_history[i]
+            if len(history) > 0:
+                valid_history = [r for r in history if not math.isinf(r)]
+                if valid_history:
+                    valid_history.sort()
+                    median_idx = len(valid_history) // 2
+                    smoothed_range = valid_history[median_idx]
+                    # Only apply smoothing if we have multiple readings
+                    if len(history) >= 2:
+                        fused_range = 0.7 * fused_range + 0.3 * smoothed_range
             
             fused_ranges.append(fused_range)
-            
-            # Calculate agreement score (1.0 = full agreement, 0.0 = strong disagreement)
-            if math.isinf(lidar_range) or math.isinf(camera_range):
-                agreement = 0.5  # Partial confidence with only one sensor
-            else:
-                range_diff = abs(lidar_range - camera_range)
-                # Normalize to 0-1 scale (0.5m difference = 0 agreement)
-                agreement = max(0.0, 1.0 - (range_diff / 0.5))
-            
             agreement_scores.append(agreement)
         
         # Update fused parameters

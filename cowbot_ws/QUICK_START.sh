@@ -59,5 +59,5 @@ echo "Press Ctrl+C in any terminal to stop"
 echo ""
 
 echo "=========================================="
-echo "See HARDWARE_SETUP_GUIDE.md for details"
+echo "See ../README.md for complete documentation"
 echo "=========================================="

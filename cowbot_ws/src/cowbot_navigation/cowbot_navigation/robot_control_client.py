@@ -171,28 +171,50 @@ class RobotControl:
         print("[MOTORS ENABLED] Ready for autonomous operation\n")
 
     def evaluate_direction_score(self, clearance: float, agreement: float, 
-                                  is_forward: bool = False) -> float:
+                                  is_forward: bool = False, is_straight: bool = False) -> float:
         """
-        Calculate a score for a direction based on multiple criteria.
+        Enhanced direction scoring with multiple criteria for better decision making.
         
         Args:
             clearance: Distance to obstacle in this direction
             agreement: Sensor agreement score (0-1)
             is_forward: Whether this is a forward direction (preferred)
+            is_straight: Whether this is straight forward (most preferred)
             
         Returns:
             Score for this direction (higher is better)
         """
-        # Base score from clearance
-        score = clearance
+        # Handle infinite clearance
+        if math.isinf(clearance):
+            clearance = 10.0  # Cap infinite values for scoring
         
-        # Bonus for sensor agreement (confident reading)
-        # High agreement = more reliable, boost score
-        score *= (0.7 + 0.3 * agreement)
+        # Base score from clearance (non-linear: closer to obstacles gets penalized more)
+        # Use square root to emphasize larger clearances
+        score = math.sqrt(clearance)
         
-        # Preference for forward directions
+        # Boost for sensor agreement (confident reading = more reliable)
+        # High agreement (0.8+) significantly boosts confidence
+        if agreement > 0.8:
+            agreement_multiplier = 0.5 + 0.5 * agreement  # 0.9-1.0 range
+        elif agreement > 0.5:
+            agreement_multiplier = 0.4 + 0.4 * agreement  # 0.6-0.8 range
+        else:
+            agreement_multiplier = 0.3 + 0.3 * agreement  # 0.3-0.5 range
+        
+        score *= agreement_multiplier
+        
+        # Strong preference for forward directions (keeps robot moving forward)
         if is_forward:
-            score *= 1.3
+            score *= 1.4
+            # Extra bonus for straight forward
+            if is_straight:
+                score *= 1.2
+        
+        # Penalize very close obstacles more aggressively
+        if clearance < 0.4:
+            score *= 0.3  # Heavy penalty
+        elif clearance < 0.6:
+            score *= 0.6  # Moderate penalty
         
         return score
 
@@ -257,16 +279,16 @@ class RobotControl:
                     print(f"Back ranges  - B:{b:.2f} BL:{bl:.2f} BR:{br:.2f}")
                     print(f"Agreement    - F:{ag_f:.2f} FL:{ag_fl:.2f} FR:{ag_fr:.2f} L:{ag_l:.2f} R:{ag_r:.2f}")
                     
-                    # Evaluate all directions with multi-criteria scoring
+                    # Evaluate all directions with enhanced multi-criteria scoring
                     direction_scores = {
-                        'front': self.evaluate_direction_score(f, ag_f, is_forward=True),
+                        'front': self.evaluate_direction_score(f, ag_f, is_forward=True, is_straight=True),
                         'front-left': self.evaluate_direction_score(fl, ag_fl, is_forward=True),
                         'front-right': self.evaluate_direction_score(fr, ag_fr, is_forward=True),
                         'left': self.evaluate_direction_score(l, ag_l, is_forward=False),
                         'right': self.evaluate_direction_score(r, ag_r, is_forward=False),
-                        'back': b * 0.5,  # Back directions get lower priority
-                        'back-left': bl * 0.5,
-                        'back-right': br * 0.5
+                        'back': self.evaluate_direction_score(b, 0.5, is_forward=False) * 0.4,  # Back gets lower priority
+                        'back-left': self.evaluate_direction_score(bl, 0.5, is_forward=False) * 0.4,
+                        'back-right': self.evaluate_direction_score(br, 0.5, is_forward=False) * 0.4
                     }
                     
                     # Find best direction
@@ -382,19 +404,20 @@ class RobotControl:
                         'right': (right, ag_r, 1.0),
                     }
                     
-                    # Score each direction
+                    # Enhanced scoring using improved evaluation function
                     scores = {}
                     for name, (clearance, agreement, dir_mult) in directions.items():
-                        if clearance == float('inf'):
-                            clearance = 2.0
+                        is_forward = name.startswith('front')
+                        is_straight = (name == 'front')
+                        # Use enhanced scoring function
+                        scores[name] = self.evaluate_direction_score(
+                            clearance, agreement, 
+                            is_forward=is_forward, 
+                            is_straight=is_straight
+                        )
+                        # Additional safety check
                         if clearance < MIN_SAFE_CLEARANCE:
-                            scores[name] = 0.0
-                        else:
-                            score = clearance * dir_mult
-                            # Bonus for sensor fusion (both sensors agree)
-                            if agreement > 0.8:
-                                score *= 1.3
-                            scores[name] = score
+                            scores[name] *= 0.1  # Heavily penalize unsafe directions
                     
                     best_dir = max(scores, key=scores.get)
                     best_score = scores[best_dir]

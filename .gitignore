@@ -20,6 +20,9 @@ __pycache__/
 
 # IDE
 .vscode/
+.vscode-server/
+.cursor/
+.cursor-server/
 .idea/
 *.swp
 *.swo

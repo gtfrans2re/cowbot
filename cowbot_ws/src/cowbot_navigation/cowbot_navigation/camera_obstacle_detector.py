@@ -33,9 +33,18 @@ class CameraObstacleDetector(Node):
         self.max_detection_range = 2.0  # Maximum reliable detection range in meters
         self.min_detection_range = 0.1  # Minimum detection range in meters
         
-        # Calibration constant for distance estimation (will need tuning)
-        # Assumes obstacle average height of ~0.3m at 1m distance occupies certain pixels
-        self.distance_calibration = 15000.0
+        # Improved calibration constants for distance estimation
+        self.distance_calibration_area = 15000.0  # Area-based distance estimation
+        self.distance_calibration_height = 200.0  # Height-based distance estimation
+        
+        # Temporal filtering for stable detections
+        self.detection_history = [[] for _ in range(5)]  # History for each sector
+        self.history_size = 3  # Number of frames to average
+        
+        # Adaptive edge detection parameters
+        self.canny_low = 50
+        self.canny_high = 150
+        self.adaptive_threshold = True  # Use adaptive thresholding
         
         # Define sectors matching LiDAR angular divisions
         # Sectors: [right, front_right, front, front_left, left]
@@ -111,8 +120,16 @@ class CameraObstacleDetector(Node):
         # Apply Gaussian blur to reduce noise
         blurred = cv2.GaussianBlur(gray, (5, 5), 0)
         
-        # Edge detection using Canny
-        edges = cv2.Canny(blurred, 50, 150)
+        # Improved edge detection with adaptive thresholding
+        if self.adaptive_threshold:
+            # Adaptive thresholding works better in varying lighting
+            thresh = cv2.adaptiveThreshold(blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+                                          cv2.THRESH_BINARY, 11, 2)
+            edges = cv2.Canny(blurred, self.canny_low, self.canny_high)
+            # Combine adaptive threshold and Canny for better detection
+            edges = cv2.bitwise_or(edges, thresh)
+        else:
+            edges = cv2.Canny(blurred, self.canny_low, self.canny_high)
         
         # Morphological operations to connect edges
         kernel = np.ones((5, 5), np.uint8)
@@ -127,8 +144,13 @@ class CameraObstacleDetector(Node):
         for contour in contours:
             area = cv2.contourArea(contour)
             
-            # Filter small contours
+            # Filter small contours and check aspect ratio
             if area < self.min_contour_area:
+                continue
+            
+            # Filter based on aspect ratio (obstacles should have reasonable width/height ratio)
+            aspect_ratio = float(w) / h if h > 0 else 0
+            if aspect_ratio < 0.2 or aspect_ratio > 5.0:  # Too narrow or too wide
                 continue
             
             # Get bounding box
@@ -159,7 +181,7 @@ class CameraObstacleDetector(Node):
 
     def estimate_distance(self, width, height, center_y, area):
         """
-        Estimate distance to obstacle based on its appearance in the image.
+        Enhanced distance estimation using multiple cues for better accuracy.
         
         Args:
             width: Width of bounding box in pixels
@@ -173,18 +195,29 @@ class CameraObstacleDetector(Node):
         # Method 1: Use area (larger area = closer)
         # Assuming inverse square relationship
         if area > 0:
-            distance_from_area = math.sqrt(self.distance_calibration / area)
+            distance_from_area = math.sqrt(self.distance_calibration_area / area)
         else:
             distance_from_area = self.max_detection_range
         
-        # Method 2: Use vertical position (lower in frame = closer)
+        # Method 2: Use height (larger height = closer)
+        # Assuming average obstacle height of ~0.3m
+        if height > 0:
+            # Inverse relationship: larger pixel height = closer object
+            distance_from_height = self.distance_calibration_height / height
+        else:
+            distance_from_height = self.max_detection_range
+        
+        # Method 3: Use vertical position (lower in frame = closer)
         # Objects at bottom of frame are closest
         vertical_ratio = center_y / self.image_height
-        # Map vertical position: bottom (1.0) -> min_range, middle (0.5) -> mid_range
+        # Map vertical position: bottom (1.0) -> min_range, top (0.0) -> max_range
         distance_from_position = self.min_detection_range + (1.0 - vertical_ratio) * self.max_detection_range
         
-        # Combine both methods with weighting (area is more reliable)
-        distance = 0.7 * distance_from_area + 0.3 * distance_from_position
+        # Combine methods with weighted average
+        # Area and height are more reliable than position
+        distance = (0.5 * distance_from_area + 
+                   0.3 * distance_from_height + 
+                   0.2 * distance_from_position)
         
         # Clamp to valid range
         distance = max(self.min_detection_range, min(self.max_detection_range, distance))
@@ -193,16 +226,16 @@ class CameraObstacleDetector(Node):
 
     def compute_sector_ranges(self, detections):
         """
-        Convert obstacle detections to minimum range per sector.
+        Convert obstacle detections to minimum range per sector with temporal filtering.
         
         Args:
             detections: List of (angle, distance) tuples
             
         Returns:
-            List of 5 range values, one per sector
+            List of 5 range values, one per sector (with temporal smoothing)
         """
         # Initialize all sectors to max range
-        sector_ranges = [self.max_detection_range] * 5
+        current_sector_ranges = [self.max_detection_range] * 5
         
         # Assign each detection to appropriate sector(s)
         for angle, distance in detections:
@@ -212,9 +245,32 @@ class CameraObstacleDetector(Node):
                 
                 if angle_diff <= self.sector_width / 2:
                     # Update sector with minimum distance
-                    sector_ranges[i] = min(sector_ranges[i], distance)
+                    current_sector_ranges[i] = min(current_sector_ranges[i], distance)
         
-        return sector_ranges
+        # Apply temporal filtering to reduce noise
+        filtered_ranges = []
+        for i in range(5):
+            # Add current reading to history
+            self.detection_history[i].append(current_sector_ranges[i])
+            if len(self.detection_history[i]) > self.history_size:
+                self.detection_history[i].pop(0)
+            
+            # Use minimum of recent readings (conservative approach)
+            # This reduces false positives from transient detections
+            if len(self.detection_history[i]) > 0:
+                recent_min = min(self.detection_history[i])
+                # Only use filtered value if we have enough history
+                if len(self.detection_history[i]) >= 2:
+                    # Weighted combination: favor minimum but allow some smoothing
+                    filtered_range = 0.7 * recent_min + 0.3 * current_sector_ranges[i]
+                else:
+                    filtered_range = current_sector_ranges[i]
+            else:
+                filtered_range = current_sector_ranges[i]
+            
+            filtered_ranges.append(filtered_range)
+        
+        return filtered_ranges
 
 
 def main(args=None):
