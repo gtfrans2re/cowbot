@@ -24,19 +24,20 @@ def launch_setup(context, *args, **kwargs):
     robot_state_publisher_name= entity_name + "_robot_state_publisher"
     spawn_node_name = entity_name + "_spawn_entity"
 
-    # Spawn ROBOT Set Gazebo
+    # Spawn ROBOT in Gazebo Harmonic using ros_gz_sim
     spawn_robot = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
+        package='ros_gz_sim',
+        executable='create',
         name=spawn_node_name,
         output='screen',
         emulate_tty=True,
-        arguments=['-entity',
-                   entity_name,
-                   '-x', str(position[0]), '-y', str(position[1]
-                                                     ), '-z', str(position[2]),
-                   '-R', str(orientation[0]), '-P', str(orientation[1]
-                                                        ), '-Y', str(orientation[2]),
+        arguments=['-name', entity_name,
+                   '-x', str(position[0]), 
+                   '-y', str(position[1]),
+                   '-z', str(position[2]),
+                   '-R', str(orientation[0]), 
+                   '-P', str(orientation[1]),
+                   '-Y', str(orientation[2]),
                    '-topic', robot_description_topic_name
                    ],
         remappings=[("/robot_state_publisher", robot_state_publisher_name)
