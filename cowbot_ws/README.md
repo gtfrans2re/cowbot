@@ -1,81 +1,102 @@
 # Cowbot ROS 2 Workspace
 
-This workspace contains the ROS 2 packages for the Cowbot robot, including simulation, navigation, and hardware control.
+This workspace contains the ROS 2 packages for the Cowbot autonomous robot, including simulation, navigation, sensor fusion, and hardware control.
 
 ## Overview
 
 - **cowbot_description**: Robot URDF/Xacro models and visualization
-- **cowbot_gazebo**: Gazebo simulation launch files and worlds
-- **cowbot_navigation**: Navigation and obstacle avoidance logic
-- **cowbot_bringup**: Hardware bringup and sensor fusion
+- **cowbot_gazebo**: Gazebo Harmonic simulation launch files and worlds
+- **cowbot_navigation**: Navigation, obstacle avoidance, and sensor fusion
+- **cowbot_bringup**: Hardware bringup and sensor integration
 - **serial_motor**: Serial communication with motor controllers
 - **serial_motor_msgs**: Custom message definitions for motor control
+- **Lslidar_ROS2_driver**: LSLidar N10 LiDAR driver for ROS 2
 
 ## System Requirements
 
 ### Native Installation (Ubuntu 24.04)
-- ROS 2 Jazzy
-- Note: Gazebo Classic is not available on Ubuntu 24.04
+- **ROS 2 Jazzy** (installed and sourced)
+- **Gazebo Harmonic** (gz-sim v8+)
+- **RViz2** for visualization
+- Python 3.12+ with OpenCV
 
-### Docker Installation (Recommended for Simulation)
-- Docker and Docker Compose
-- Ubuntu 24.04 (host)
-- X11 display server
+### Hardware (Physical Robot)
+- LSLidar N10 (270° LiDAR)
+- USB Camera (Raspberry Pi camera or compatible)
+- Arduino Nano (motor controller)
+- Differential drive robot base
 
 ## Quick Start
 
-### Using Docker (Simulation)
+### Simulation (No Hardware Required)
 
-The Docker setup provides a complete ROS 2 Jazzy environment with Gazebo Harmonic for simulation.
+The simulation provides a complete virtual environment with working sensors and robot control.
 
-#### 1. Build the Docker Image
+#### 1. Install Dependencies
+
+```bash
+# Install Gazebo Harmonic and ROS packages
+sudo apt update
+sudo apt install -y \
+    ros-jazzy-gz-sim-vendor \
+    ros-jazzy-ros-gz-sim \
+    ros-jazzy-ros-gz-bridge \
+    ros-jazzy-rviz2 \
+    ros-jazzy-joint-state-publisher-gui \
+    ros-jazzy-robot-state-publisher \
+    ros-jazzy-xacro \
+    ros-jazzy-teleop-twist-keyboard
+```
+
+#### 2. Build the Workspace
 
 ```bash
 cd ~/cowbot/cowbot_ws
-sudo docker build -t cowbot_gazebo:latest .
-```
-
-#### 2. Run the Simulation
-
-```bash
-./run_docker_sim.sh
-```
-
-This will:
-- Set up X11 authentication for GUI display
-- Build the workspace inside the container
-- Launch Gazebo Harmonic with the warehouse world
-- Spawn the cowbot robot
-- Start RViz2 for visualization
-
-#### 3. Interactive Docker Shell
-
-For development and debugging:
-
-```bash
-./run_docker_shell.sh
-```
-
-Inside the container:
-```bash
-# Build the workspace
-colcon build
-
-# Source the workspace
+colcon build --symlink-install
 source install/setup.bash
+```
 
-# Launch components individually
+#### 3. Launch Simulation
+
+```bash
+# Launch complete simulation (Gazebo + RViz)
 ros2 launch cowbot_gazebo simulation_with_rviz.launch.py
 ```
 
-### Native Installation (Hardware/Development)
+This starts:
+- ✅ Gazebo Harmonic with warehouse environment
+- ✅ Cowbot robot with LiDAR and camera sensors
+- ✅ RViz2 with sensor visualization
+- ✅ All ROS-Gazebo bridges
+
+#### 4. Control the Robot
+
+In a **new terminal**:
+
+```bash
+source ~/cowbot/cowbot_ws/install/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard \
+  --ros-args --remap cmd_vel:=/cowbot/cmd_vel
+```
+
+Use keyboard to drive:
+- `i` = forward, `k` = stop, `,` = backward
+- `j` = left, `l` = right
+
+### Hardware (Physical Robot)
 
 #### 1. Install Dependencies
 
 ```bash
 sudo apt update
 sudo apt install -y \
-    ros-jazzy-joint-state-publisher-gui \
+    ros-jazzy-cv-bridge \
+    ros-jazzy-image-transport \
+    ros-jazzy-v4l2-camera \
+    ros-jazzy-sensor-msgs \
+    ros-jazzy-geometry-msgs \
+    ros-jazzy-nav-msgs \
+    python3-opencv \
     python3-colcon-common-extensions
 ```
 
@@ -85,20 +106,26 @@ sudo apt install -y \
 cd ~/cowbot/cowbot_ws
 rm -rf build/ install/ log/
 source /opt/ros/jazzy/setup.bash
-colcon build
+colcon build --symlink-install
 ```
 
-#### 3. Launch
+#### 3. Launch Hardware with Sensor Fusion
 
+**Terminal 1** - Hardware launch:
 ```bash
+cd ~/cowbot/cowbot_ws
 source install/setup.bash
-
-# For hardware
-ros2 launch cowbot_bringup hardware.launch.py
-
-# For development
-ros2 launch cowbot_description display.launch.py
+ros2 launch cowbot_bringup sensor_fusion_hardware.launch.xml
 ```
+
+**Terminal 2** - Autonomous navigation:
+```bash
+cd ~/cowbot/cowbot_ws
+source install/setup.bash
+ros2 run cowbot_navigation robot_control
+```
+
+See main README for complete hardware usage documentation.
 
 ## Docker Architecture
 
