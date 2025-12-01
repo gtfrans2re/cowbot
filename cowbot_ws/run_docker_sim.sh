@@ -2,11 +2,12 @@
 
 # Setup X11 authentication for Docker
 XAUTH=/tmp/.docker.xauth
-if [ ! -f $XAUTH ]; then
-    touch $XAUTH
-    xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
-    chmod 644 $XAUTH
+if [ -f $XAUTH ]; then
+    sudo rm -f $XAUTH
 fi
+touch $XAUTH
+xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+chmod 644 $XAUTH
 
 # Allow Docker to connect to X server
 xhost +local:docker
