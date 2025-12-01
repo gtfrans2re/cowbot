@@ -82,7 +82,8 @@ def generate_launch_description():
 
     # Launch Gazebo world
     botbox_world_path = PathJoinSubstitution([
-        ThisLaunchFileDir(),
+        FindPackageShare("cowbot_gazebo"),
+        "launch",
         "botbox_world.launch.xml"
     ])
     gazebo_world_launch = IncludeLaunchDescription(
@@ -95,7 +96,8 @@ def generate_launch_description():
 
     # Spawn robot in Gazebo (delayed)
     spawn_cowbot_path = PathJoinSubstitution([
-        ThisLaunchFileDir(),
+        FindPackageShare("cowbot_gazebo"),
+        "launch",
         "spawn_cowbot.launch.xml"
     ])
     spawn_robot_launch = IncludeLaunchDescription(
