@@ -9,6 +9,7 @@ An autonomous robotic system built on ROS 2 Jazzy, featuring advanced camera-LiD
 - [Quick Start](#quick-start)
 - [Hardware Requirements](#hardware-requirements)
 - [Installation](#installation)
+- [Remote Access & Networking](#remote-access--networking)
 - [Usage](#usage)
 - [Sensor Fusion System](#sensor-fusion-system)
 - [Navigation Package](#navigation-package)
@@ -193,6 +194,243 @@ Should show:
 - `robot_control`
 - `robot_control_debug`
 - `camera_obstacle_detector`
+
+---
+
+## Remote Access & Networking
+
+### Overview
+
+The cowbot can be accessed remotely via SSH and HTTP for development, monitoring, and control. Since enterprise networks like eduroam often have **client isolation** enabled (preventing devices from communicating directly), we use **Tailscale** - a mesh VPN that creates persistent connections between devices regardless of the underlying network.
+
+### Why Tailscale?
+
+✅ **Works on any network**: Bypasses client isolation, NAT, and firewalls
+✅ **Persistent IPs**: Each device gets a permanent 100.x.x.x IP address
+✅ **Zero configuration**: Automatic peer discovery and connection
+✅ **Secure**: End-to-end encrypted connections
+✅ **Free**: Free for personal use with up to 100 devices
+
+### Finding Cowbot IP on Different Networks
+
+#### On Your Personal Hotspot
+
+When connected to your personal hotspot, the cowbot is typically discoverable via network scanning:
+
+```bash
+# Find your network gateway
+ip route | grep default
+
+# Scan the network (e.g., for 172.20.10.0/24)
+sudo apt install -y nmap
+nmap -sn 172.20.10.0/24
+
+# Check devices with SSH/HTTP open
+nmap -p 22,80 <IP_ADDRESS>
+```
+
+#### On Enterprise Networks (eduroam)
+
+**Problem**: Enterprise networks use client isolation, which prevents direct device-to-device communication. Standard network scanning won't work.
+
+**Solution**: Use Tailscale (see setup below) to create a direct encrypted tunnel between devices.
+
+### Tailscale Setup (Recommended)
+
+#### Step 1: Install Tailscale on Your Laptop
+
+```bash
+# Install Tailscale
+curl -fsSL https://tailscale.com/install.sh | sh
+
+# Connect to Tailscale network
+sudo tailscale up
+```
+
+This will provide a URL to authenticate. Open the URL in your browser, log in with your account (Google, Microsoft, GitHub, etc.), and approve the device.
+
+```bash
+# Verify connection and get your laptop's Tailscale IP
+tailscale status
+```
+
+Your laptop will get a Tailscale IP like `100.x.x.x`.
+
+#### Step 2: Install Tailscale on the Cowbot
+
+**Connect to the cowbot via your hotspot first**, then run:
+
+```bash
+# SSH into cowbot via hotspot
+ssh cowbot@<HOTSPOT_IP>
+
+# Install Tailscale on cowbot
+curl -fsSL https://tailscale.com/install.sh | sh
+
+# Connect cowbot to Tailscale
+sudo tailscale up
+```
+
+Open the authentication URL in your browser and approve the cowbot device.
+
+```bash
+# Verify cowbot is connected
+tailscale status
+```
+
+The cowbot will get its own Tailscale IP like `100.x.x.x`.
+
+#### Step 3: Access Cowbot via Tailscale
+
+**From your laptop**, list all connected Tailscale devices:
+
+```bash
+tailscale status
+```
+
+You'll see both your laptop and the cowbot listed with their Tailscale IPs.
+
+**SSH to cowbot using its Tailscale IP:**
+
+```bash
+# Example (use your actual cowbot Tailscale IP)
+ssh cowbot@100.116.35.41
+```
+
+**Access cowbot web interface:**
+
+```bash
+# Example (use your actual cowbot Tailscale IP)
+http://100.116.35.41
+```
+
+✅ **This works on ANY network** - your hotspot, eduroam, home WiFi, cellular, etc.!
+
+### Network Configuration on Cowbot
+
+#### Firewall Configuration
+
+If you need to configure the cowbot's firewall to allow specific networks:
+
+```bash
+# Check firewall status
+sudo ufw status
+
+# Allow connections from a specific network (e.g., eduroam)
+sudo ufw allow from 172.29.0.0/16
+
+# Enable firewall if not already enabled
+sudo ufw enable
+
+# Verify rules
+sudo ufw status numbered
+```
+
+**Note**: With Tailscale, firewall rules are less critical since Tailscale creates encrypted tunnels that bypass local network restrictions.
+
+#### SSH Configuration
+
+The SSH daemon should already be configured to accept connections:
+
+```bash
+# Check SSH service status
+sudo systemctl status ssh
+
+# Start SSH if not running
+sudo systemctl start ssh
+
+# Enable SSH to start on boot
+sudo systemctl enable ssh
+
+# Check SSH configuration
+sudo cat /etc/ssh/sshd_config | grep -v "^#" | grep -v "^$"
+```
+
+### Troubleshooting Network Access
+
+#### Cannot Find Cowbot on Local Network
+
+**Problem**: Network scanning doesn't detect the cowbot.
+
+**Solutions**:
+1. **Use Tailscale** (recommended) - bypasses all network restrictions
+2. Check if cowbot is on the correct network:
+   ```bash
+   # On cowbot
+   ip addr show
+   hostname -I
+   ```
+3. Verify both devices are on the same subnet
+4. Check for client isolation on the network
+
+#### SSH Connection Refused or Closed
+
+**Problem**: `Connection closed by X.X.X.X port 22` or `Connection refused`
+
+**Solutions**:
+1. **Use Tailscale IP instead of local IP**
+2. Verify SSH service is running:
+   ```bash
+   sudo systemctl status ssh
+   sudo systemctl start ssh
+   ```
+3. Check firewall rules:
+   ```bash
+   sudo ufw status
+   sudo ufw allow from <YOUR_IP>
+   ```
+4. Check SSH logs for errors:
+   ```bash
+   sudo journalctl -u ssh -n 50 --no-pager
+   ```
+
+#### Tailscale Not Connecting
+
+**Problem**: Devices show as "offline" in Tailscale status.
+
+**Solutions**:
+1. Verify internet connectivity on both devices
+2. Restart Tailscale:
+   ```bash
+   sudo systemctl restart tailscaled
+   sudo tailscale up
+   ```
+3. Check Tailscale status:
+   ```bash
+   tailscale status
+   tailscale ping <device-name>
+   ```
+4. Verify devices are authenticated in the Tailscale admin console:
+   https://login.tailscale.com/admin/machines
+
+#### Network Discovery Tools
+
+Useful tools for network troubleshooting:
+
+```bash
+# Install network scanning tools
+sudo apt install -y nmap arp-scan avahi-utils
+
+# Scan local network
+sudo arp-scan -l --interface=wlan0
+
+# Check for mDNS broadcasts
+avahi-browse -art
+
+# Check ARP cache
+ip neigh
+
+# Scan specific IP for open ports
+nmap -p 22,80,443 <IP_ADDRESS>
+```
+
+### Best Practices
+
+1. **Always use Tailscale for remote access** - it's more reliable and secure than exposing services directly
+2. **Keep Tailscale running on boot** - it's already configured as a systemd service
+3. **Use Tailscale IPs in scripts and configurations** - they persist across network changes
+4. **Monitor Tailscale connection** - check `tailscale status` if experiencing issues
+5. **Keep both devices authenticated** - Tailscale keys expire after some time, re-authenticate if needed
 
 ---
 
