@@ -102,7 +102,7 @@
       <origin xyz="-0.02 0.0085 -0.0191" rpy="0 0 0"/>
       <parent link="${robot_name}_motor_1"/>
       <child link="${robot_name}_wheel_right"/>
-      <axis xyz="0 0 1"/>
+      <axis xyz="0 0 -1"/>
     </joint>
 
     <!-- Joint from base_link to motor_1 -->
@@ -184,12 +184,12 @@
       <origin xyz="-0.02 -0.0085 -0.0191" rpy="0 0 0"/>
       <parent link="${robot_name}_motor_2"/>
       <child link="${robot_name}_wheel_left"/>
-      <axis xyz="0 0 -1"/>
+      <axis xyz="0 0 1"/>
     </joint>
 
     <!-- Joint from base_link to motor_2 -->
     <joint name="${robot_name}_left_motor" type="fixed">
-      <origin xyz="0.069556 -0.0408289 0.0260952" rpy="1.5708 0 0"/>
+      <origin xyz="-0.078444 0.0408289 0.0260952" rpy="1.5708 0 0"/>
       <parent link="${robot_name}_base_link"/>
       <child link="${robot_name}_motor_2"/>
       <axis xyz="0 0 1"/>
@@ -222,7 +222,7 @@
 
     <!-- Joint from base_link to ball_caster -->
     <joint name="${robot_name}_caster" type="fixed">
-      <origin xyz="5.59691e-05 -0.0241949 0.00334516" rpy="0 0 1.5708"/>
+      <origin xyz="0.08 -0.0241949 0.00334516" rpy="0 0 1.5708"/>
       <parent link="${robot_name}_base_link"/>
       <child link="${robot_name}_ball_caster"/>
       <axis xyz="0 0 1"/>
@@ -287,7 +287,7 @@
     </link>
 
     <!-- Joint from base_link to camera -->
-    <joint name="${robot_name}_camera" type="fixed">
+    <joint name="${robot_name}_camera_joint" type="fixed">
       <origin xyz="0.021056 -0.0168289 0.088598" rpy="1.5708 0 1.5708"/>
       <parent link="${robot_name}_base_link"/>
       <child link="${robot_name}_camera"/>

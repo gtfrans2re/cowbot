@@ -28,7 +28,14 @@ def launch_setup(context, *args, **kwargs):
         robot_desc_path, mappings={"robot_name": robot_name}
     )
 
-    xml = robot_desc.toxml()
+    xml_str = robot_desc.toxml()
+    
+    # Replace package:// URIs with file:// URIs for Gazebo compatibility
+    # Get the package share directory for cowbot_description
+    pkg_share = get_package_share_directory('cowbot_description')
+    xml_str = xml_str.replace('package://cowbot_description/', f'file://{pkg_share}/')
+    
+    xml = xml_str
 
     # Robot State Publisher Node
     robot_state_publisher_node = Node(
