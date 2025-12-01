@@ -14,7 +14,7 @@ from launch.actions import (
 )
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource, AnyLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, ThisLaunchFileDir
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
@@ -81,10 +81,12 @@ def generate_launch_description():
     )
 
     # Launch Gazebo world
+    botbox_world_path = PathJoinSubstitution([
+        ThisLaunchFileDir(),
+        "botbox_world.launch.xml"
+    ])
     gazebo_world_launch = IncludeLaunchDescription(
-        AnyLaunchDescriptionSource(
-            os.path.join(gazebo_pkg, "launch", "botbox_world.launch.xml")
-        ),
+        AnyLaunchDescriptionSource(botbox_world_path),
         launch_arguments={
             "map_name": world_name,
             "headless": headless,
@@ -92,10 +94,12 @@ def generate_launch_description():
     )
 
     # Spawn robot in Gazebo (delayed)
+    spawn_cowbot_path = PathJoinSubstitution([
+        ThisLaunchFileDir(),
+        "spawn_cowbot.launch.xml"
+    ])
     spawn_robot_launch = IncludeLaunchDescription(
-        AnyLaunchDescriptionSource(
-            os.path.join(gazebo_pkg, "launch", "spawn_cowbot.launch.xml")
-        ),
+        AnyLaunchDescriptionSource(spawn_cowbot_path),
         launch_arguments={
             "robot_name": robot_name,
             "x_spawn": x_spawn,
