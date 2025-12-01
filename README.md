@@ -645,63 +645,257 @@ Contributions are welcome! Please ensure:
 
 ---
 
-## Simulation Setup (Local Machine)
+## Simulation Setup
 
-For running Gazebo and RViz simulation on your local machine. This is recommended for development and testing without requiring the physical robot hardware.
+The Cowbot robot includes a fully functional Gazebo Harmonic simulation with LiDAR, camera, and differential drive capabilities. This is ideal for development and testing without physical hardware.
+
+### What's Included
+
+✅ **Gazebo Harmonic v8** simulation environment
+✅ **LiDAR sensor** (LSLidar N10, 270° coverage, ~7 Hz)
+✅ **Camera sensor** (800x800 RGB, ~14 Hz, first-person view)
+✅ **Differential drive** robot with correct kinematics
+✅ **RViz2 visualization** with sensor data display
+✅ **Warehouse environment** for testing
+✅ **Teleop control** for manual testing
 
 ### Prerequisites
 
-- ROS 2 Jazzy installed on local machine
-- Gazebo (Ignition Gazebo) installed
+- ROS 2 Jazzy installed
+- Gazebo Harmonic (gz-harmonic) installed
 - RViz2 installed
-- Sufficient system resources (RAM, GPU)
 
 ### Installation
 
 ```bash
-# Install Gazebo and RViz
+# Install required packages
 sudo apt update
 sudo apt install -y \
-    gz-jazzy \
+    ros-jazzy-gz-sim-vendor \
+    ros-jazzy-ros-gz-sim \
+    ros-jazzy-ros-gz-bridge \
     ros-jazzy-rviz2 \
     ros-jazzy-joint-state-publisher \
     ros-jazzy-joint-state-publisher-gui \
     ros-jazzy-robot-state-publisher \
-    ros-jazzy-xacro
+    ros-jazzy-xacro \
+    ros-jazzy-teleop-twist-keyboard
+
+# Build the workspace
+cd ~/cowbot/cowbot_ws
+colcon build --symlink-install
+source install/setup.bash
 ```
 
 ### Launch Simulation
 
+**Complete simulation (Gazebo + RViz):**
 ```bash
 cd ~/cowbot/cowbot_ws
 source install/setup.bash
-
-# Launch Gazebo with robot and RViz
 ros2 launch cowbot_gazebo simulation_with_rviz.launch.py
 ```
 
-This will:
-1. Start Gazebo simulation environment
-2. Spawn the robot in the world
-3. Launch RViz with pre-configured visualization
+This launches:
+- **Gazebo Harmonic** with botbox warehouse world
+- **Cowbot robot** with sensors (LiDAR + Camera)
+- **RViz2** with pre-configured visualization panels
+- **ROS-Gazebo bridges** for sensor data
 
-### Network Bridge (RPi ↔ Local Machine)
+### Manual Control
 
-To connect simulation on local machine with hardware on RPi:
+In a new terminal, control the robot with keyboard:
 
-**On RPi (`~/.bashrc`):**
+```bash
+source ~/cowbot/cowbot_ws/install/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard \
+  --ros-args --remap cmd_vel:=/cowbot/cmd_vel
+```
+
+**Controls:**
+- `i` = Move forward
+- `k` = Stop
+- `,` = Move backward  
+- `j` = Turn left
+- `l` = Turn right
+- `u` / `o` = Diagonal movements
+- `q` / `z` = Increase/decrease speed
+
+### Monitor Sensors
+
+```bash
+# Check LiDAR data rate
+ros2 topic hz /cowbot/scan
+# Expected: ~7 Hz
+
+# Check camera data rate
+ros2 topic hz /camera/image_raw
+# Expected: ~14 Hz
+
+# View one LiDAR scan
+ros2 topic echo /cowbot/scan --once
+
+# View robot odometry
+ros2 topic echo /cowbot/odom
+
+# List all available topics
+ros2 topic list
+```
+
+### Available Topics
+
+| Topic | Type | Description |
+|-------|------|-------------|
+| `/cowbot/scan` | sensor_msgs/LaserScan | LiDAR scan data (270°, 0.05-20m) |
+| `/camera/image_raw` | sensor_msgs/Image | RGB camera feed (800x800) |
+| `/camera/camera_info` | sensor_msgs/CameraInfo | Camera calibration |
+| `/cowbot/cmd_vel` | geometry_msgs/Twist | Velocity commands |
+| `/cowbot/odom` | nav_msgs/Odometry | Robot odometry |
+| `/tf` | tf2_msgs/TFMessage | Transform tree |
+| `/tf_static` | tf2_msgs/TFMessage | Static transforms |
+| `/joint_states` | sensor_msgs/JointState | Wheel joint states |
+
+### Gazebo Controls
+
+**Camera navigation in Gazebo:**
+- **Scroll wheel**: Zoom in/out
+- **Middle mouse + drag**: Pan camera
+- **Right mouse + drag**: Rotate view
+- **Shift + Right mouse + drag**: Move camera position
+- **Click robot**: Focus on robot
+
+### RViz Visualization
+
+The simulation automatically configures RViz with:
+- **Robot Model**: 3D visualization of the cowbot
+- **LiDAR Scan**: Red point cloud showing obstacles
+- **Camera**: First-person view from robot camera
+- **TF frames**: Coordinate system visualization
+- **Odometry**: Robot path/trajectory
+
+### Simulation Architecture
+
+**Gazebo Harmonic Plugins:**
+- `gz-sim-diff-drive-system`: Differential drive controller
+- `gz-sim-sensors-system`: LiDAR and camera sensors
+- `gz-sim-physics-system`: Physics simulation
+- `JointStatePublisher`: Publishes wheel joint states
+- `PosePublisher`: Publishes robot pose/odometry
+
+**ROS-Gazebo Bridges:**
+- Clock sync (`/clock`)
+- Camera image and info
+- LiDAR scan data
+- Velocity commands
+- Odometry data
+
+### Robot Specifications (Simulation)
+
+**Differential Drive:**
+- Wheel separation: 0.12 m
+- Wheel radius: 0.0325 m
+- Max velocity: 0.5 m/s
+- Two rear wheels + front ball caster
+
+**LiDAR (LSLidar N10):**
+- Field of view: 360° (270° effective)
+- Range: 0.05 - 20.0 m
+- Samples: 270 per scan
+- Update rate: ~7 Hz
+- Frame: `cowbot/cowbot_base_link/cowbot_lslidar`
+
+**Camera:**
+- Resolution: 800x800 pixels
+- FOV: 1.396 rad (80°)
+- Update rate: ~14 Hz
+- Format: RGB8
+
+### Troubleshooting Simulation
+
+**Gazebo won't start:**
+```bash
+# Check Gazebo installation
+gz sim --version
+
+# Should show: Gazebo Sim, version 8.x.x
+```
+
+**Robot not visible in Gazebo:**
+```bash
+# Check if robot spawned
+ros2 topic list | grep cowbot
+
+# Check spawn service
+ros2 service list | grep spawn
+```
+
+**Sensors not publishing:**
+```bash
+# Verify bridge is running
+ros2 node list | grep bridge
+
+# Check bridge topics
+ros2 topic list | grep -E "(scan|camera)"
+```
+
+**RViz "Message Filter dropping message" warnings:**
+- These are **normal** and not critical
+- Occur when sensor data arrives faster than RViz can display
+- Does not affect simulation functionality
+
+**Performance issues:**
+- Close unused applications
+- Reduce Gazebo physics update rate (edit world file)
+- Reduce camera resolution in plugin config
+- Use a dedicated GPU if available
+
+### Network Bridge (Simulation ↔ Hardware)
+
+To connect simulation on one machine with hardware on another:
+
+**On Raspberry Pi (`~/.bashrc`):**
 ```bash
 export ROS_DOMAIN_ID=0
 export ROS_LOCALHOST_ONLY=0
 ```
 
-**On Local Machine (`~/.bashrc`):**
+**On Simulation Machine (`~/.bashrc`):**
 ```bash
 export ROS_DOMAIN_ID=0
 export ROS_LOCALHOST_ONLY=0
 ```
 
-Both machines can now communicate via ROS 2 topics!
+Both machines will now share ROS 2 topics over the network!
+
+### Development with Simulation
+
+**Test navigation algorithms:**
+```bash
+# Terminal 1: Launch simulation
+ros2 launch cowbot_gazebo simulation_with_rviz.launch.py
+
+# Terminal 2: Run your navigation node
+source ~/cowbot/cowbot_ws/install/setup.bash
+ros2 run cowbot_navigation robot_control
+```
+
+**Record sensor data:**
+```bash
+# Record a bag file
+ros2 bag record /cowbot/scan /camera/image_raw /cowbot/odom
+
+# Play it back later
+ros2 bag play <bag_file>
+```
+
+**Visualize transforms:**
+```bash
+# View TF tree
+ros2 run rqt_tf_tree rqt_tf_tree
+
+# Echo a specific transform
+ros2 run tf2_ros tf2_echo cowbot_base_link cowbot_lslidar
+```
 
 ---
 
