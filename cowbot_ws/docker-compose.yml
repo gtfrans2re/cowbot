@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  cowbot_sim:
+    build: .
+    image: cowbot_gazebo:latest
+    container_name: cowbot_simulation
+    stdin_open: true
+    tty: true
+    network_mode: host
+    privileged: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - XAUTHORITY=/tmp/.docker.xauth
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+      - ./:/workspace:rw
+      - /dev/dri:/dev/dri
+    command: /bin/bash -c "rm -rf build install log && source /opt/ros/jazzy/setup.bash && colcon build && source install/setup.bash && ros2 launch cowbot_gazebo simulation_with_rviz.launch.py"

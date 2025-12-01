@@ -13,7 +13,9 @@ from launch.actions import (
     ExecuteProcess,
 )
 from launch.conditions import IfCondition, UnlessCondition
-from launch.launch_description_sources import PythonLaunchDescriptionSource, AnyLaunchDescriptionSource
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+# CHANGED: Use the standard frontend source for XML files
+from launch.launch_description_sources import FrontendLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, ThisLaunchFileDir
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -86,8 +88,10 @@ def generate_launch_description():
         "launch",
         "botbox_world.launch.xml"
     ])
+    
+    # CHANGED: Use FrontendLaunchDescriptionSource
     gazebo_world_launch = IncludeLaunchDescription(
-        AnyLaunchDescriptionSource(botbox_world_path),
+        FrontendLaunchDescriptionSource(botbox_world_path),
         launch_arguments={
             "map_name": world_name,
             "headless": headless,
@@ -100,8 +104,10 @@ def generate_launch_description():
         "launch",
         "spawn_cowbot.launch.xml"
     ])
+    
+    # CHANGED: Use FrontendLaunchDescriptionSource
     spawn_robot_launch = IncludeLaunchDescription(
-        AnyLaunchDescriptionSource(spawn_cowbot_path),
+        FrontendLaunchDescriptionSource(spawn_cowbot_path),
         launch_arguments={
             "robot_name": robot_name,
             "x_spawn": x_spawn,
@@ -134,9 +140,6 @@ def generate_launch_description():
         parameters=[{"use_sim_time": use_sim_time}],
     )
 
-    # TF2 tools - view frames command (optional)
-    # Users can run: ros2 run tf2_tools view_frames
-
     return LaunchDescription(
         [
             # Launch arguments
@@ -159,5 +162,3 @@ def generate_launch_description():
             joint_state_publisher_gui,
         ]
     )
-
-
