@@ -136,6 +136,17 @@
       </link>
     </model>
 
+    <include><name>CowID01</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>1.0 1.0 0.4 0 0 0.5</pose></include>
+    <include><name>CowID02</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>1.5 -1.2 0.4 0 0 -0.8</pose></include>
+    <include><name>CowID03</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>-1.5 1.0 0.4 0 0 1.2</pose></include>
+    <include><name>CowID04</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>-1.2 -1.5 0.4 0 0 3.14</pose></include>
+    <include><name>CowID05</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>0.2 2.0 0.4 0 0 0</pose></include>
+    <include><name>CowID06</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>2.0 0.2 0.4 0 0 -1.5</pose></include>
+    <include><name>CowID07</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>-2.0 -0.5 0.4 0 0 0.7</pose></include>
+    <include><name>CowID08</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>0.8 -1.8 0.4 0 0 2.1</pose></include>
+    <include><name>CowID09</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>-0.5 1.5 0.4 0 0 -2.5</pose></include>
+    <include><name>CowID10</name><uri>https://fuel.gazebosim.org/1.0/googleresearch/models/schleich_hereford_bull</uri><pose>1.8 1.8 0.4 0 0 1.0</pose></include>
+    
     <!-- Physics engine -->
     <physics name="1ms" type="ignored">
       <max_step_size>0.001</max_step_size>
@@ -159,5 +170,4 @@
     </gui>
   </world>
 </sdf>
-
 

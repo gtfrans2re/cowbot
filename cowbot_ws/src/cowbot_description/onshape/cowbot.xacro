@@ -199,9 +199,8 @@
     <link name="${robot_name}_ball_caster">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.01"/>
-        <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-      </inertial>
+        <mass value="0.05"/> 
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/> </inertial>
       <!-- Part pololu_ball_caster -->
       <visual>
         <origin xyz="0.006731 0 -0.0106945" rpy="-1.5708 0 0"/>
