@@ -205,11 +205,11 @@ The cowbot can be accessed remotely via SSH and HTTP for development, monitoring
 
 ### Why Tailscale?
 
-✅ **Works on any network**: Bypasses client isolation, NAT, and firewalls
-✅ **Persistent IPs**: Each device gets a permanent 100.x.x.x IP address
-✅ **Zero configuration**: Automatic peer discovery and connection
-✅ **Secure**: End-to-end encrypted connections
-✅ **Free**: Free for personal use with up to 100 devices
+**Works on any network**: Bypasses client isolation, NAT, and firewalls
+**Persistent IPs**: Each device gets a permanent 100.x.x.x IP address
+**Zero configuration**: Automatic peer discovery and connection
+**Secure**: End-to-end encrypted connections
+**Free**: Free for personal use with up to 100 devices
 
 ### Finding Cowbot IP on Different Networks
 
@@ -304,7 +304,7 @@ ssh cowbot@100.116.35.41
 http://100.116.35.41
 ```
 
-✅ **This works on ANY network** - your hotspot, eduroam, home WiFi, cellular, etc.!
+**This works on ANY network** - your hotspot, eduroam, home WiFi, cellular, etc.!
 
 ### Network Configuration on Cowbot
 
@@ -857,7 +857,7 @@ cowbot_ws/
 
 ## Safety Notes
 
-⚠️ **IMPORTANT SAFETY WARNINGS:**
+**IMPORTANT SAFETY WARNINGS:**
 
 1. **Test in Safe Area**: Always test in an open area away from stairs, drops, or fragile objects
 2. **Emergency Stop**: Keep keyboard ready to press Ctrl+C for immediate stop
@@ -889,13 +889,13 @@ The Cowbot robot includes a fully functional Gazebo Harmonic simulation with LiD
 
 ### What's Included
 
-✅ **Gazebo Harmonic v8** simulation environment
-✅ **LiDAR sensor** (LSLidar N10, 270° coverage, ~7 Hz)
-✅ **Camera sensor** (800x800 RGB, ~14 Hz, first-person view)
-✅ **Differential drive** robot with correct kinematics
-✅ **RViz2 visualization** with sensor data display
-✅ **Warehouse environment** for testing
-✅ **Teleop control** for manual testing
+**Gazebo Harmonic v8** simulation environment
+**LiDAR sensor** (LSLidar N10, 270° coverage, ~7 Hz)
+**Camera sensor** (800x800 RGB, ~14 Hz, first-person view)
+**Differential drive** robot with correct kinematics
+**RViz2 visualization** with sensor data display
+**Warehouse environment** for testing
+**Teleop control** for manual testing
 
 ### Prerequisites
 
@@ -1147,4 +1147,4 @@ For issues or questions:
 
 ---
 
-**Happy Navigating!** 🤖
+**Happy Navigating!**
