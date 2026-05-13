@@ -12,6 +12,8 @@ An autonomous robotic system built on ROS 2 Jazzy, featuring advanced camera-LiD
 - [Remote Access & Networking](#remote-access--networking)
 - [Usage](#usage)
 - [Sensor Fusion System](#sensor-fusion-system)
+- [Mastitis Detection](#mastitis-detection)
+- [Semantic Segmentation](#semantic-segmentation)
 - [Navigation Package](#navigation-package)
 - [Configuration & Tuning](#configuration--tuning)
 - [Troubleshooting](#troubleshooting)
@@ -833,24 +835,29 @@ ros2 pkg list | grep cowbot
 ## Project Structure
 
 ```
-cowbot_ws/
-├── src/
-│   ├── cowbot_bringup/          # Main launch files
-│   │   └── launch/
-│   │       ├── bringup.launch.xml
-│   │       └── sensor_fusion_hardware.launch.xml
-│   ├── cowbot_description/      # Robot URDF/description
-│   ├── cowbot_gazebo/           # Gazebo simulation
-│   ├── cowbot_navigation/       # Navigation & sensor fusion
-│   │   ├── cowbot_navigation/   # Python modules
-│   │   ├── launch/              # Launch files
-│   │   └── scripts/             # Bash scripts
-│   ├── serial_motor/            # Motor driver interface
-│   ├── serial_motor_msgs/       # Motor message definitions
-│   └── Lslidar_ROS2_driver/     # LiDAR driver
-├── build/                        # Build artifacts (gitignored)
-├── install/                      # Installed packages (gitignored)
-└── log/                          # Build logs (gitignored)
+.
+├── cowbot_mastitis_detection/    # ML models and scripts for animal health monitoring
+├── cowbot_semantic_segmentation/ # Vision models for environment and animal segmentation
+├── cowbot_ws/                    # Main ROS 2 Jazzy workspace
+│   ├── src/
+│   │   ├── cowbot_bringup/       # Hardware launch files and system entry points
+│   │   │   └── launch/
+│   │   │       ├── bringup.launch.xml
+│   │   │       └── sensor_fusion_hardware.launch.xml
+│   │   ├── cowbot_description/   # Robot URDF, Xacro, and mesh files
+│   │   ├── cowbot_gazebo/        # Gazebo Harmonic simulation worlds and configurations
+│   │   ├── cowbot_navigation/    # Core logic for sensor fusion and autonomous avoidance
+│   │   │   ├── cowbot_navigation/ # Python modules (robot_interface, robot_control)
+│   │   │   ├── launch/           # Navigation-specific launch files
+│   │   │   └── scripts/          # Bash helpers for telemetry and stats
+│   │   ├── serial_motor/         # Arduino Nano / Serial motor driver interface
+│   │   ├── serial_motor_msgs/    # Custom ROS 2 message definitions for motors
+│   │   └── Lslidar_ROS2_driver/  # Driver for the LSLidar N10 sensor
+│   ├── build/                    # Build artifacts (gitignored)
+│   ├── install/                  # Sourced setup files (gitignored)
+│   └── log/                      # Compilation and runtime logs (gitignored)
+├── .gitignore                    # Git exclusion rules
+└── README.md                     # Project documentation
 ```
 
 ---
