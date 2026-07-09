@@ -1,0 +1,6 @@
+stage,mean_ms,std_ms,notes
+frame_acquisition,,,
+yolov11_inference,,,
+drl_policy,,,
+uart_tx_actuation,,,
+end_to_end,68.4,,

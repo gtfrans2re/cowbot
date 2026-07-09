@@ -1,0 +1,5 @@
+metric,value,unit,notes
+avg_power,,W,
+latency,68.4,ms,
+energy_per_inference,,mJ,avg_power * latency
+idle_power,,W,

@@ -1,0 +1,5 @@
+metric,value,unit,notes
+peak_bandwidth,,GB/s,theoretical
+measured_bandwidth,,GB/s,
+utilization,,%,measured / peak
+tool,,,
