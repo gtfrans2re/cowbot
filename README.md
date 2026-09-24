@@ -2,8 +2,30 @@
 
 An autonomous robotic system built on ROS 2 Jazzy, featuring advanced camera-LiDAR sensor fusion for robust obstacle detection and navigation.
 
+---
+
+## 🎤 ROSCon 2026 Lightning Talk
+
+**Bridging the Lab-to-Farm Deployment Gap: Fusing LiDAR and Semantic Perception for Livestock Health Monitoring in ROS 2**
+Francois Gonothi Toure, Université du Québec à Montréal (UQAM)
+ROSCon 2026, Toronto · Day 3 lightning talks · September 24, 2026
+
+Cowbot is a ROS 2 Jazzy autonomous ground robot for early bovine mastitis detection. It runs a YOLOv11-Nano semantic perception pipeline on a Raspberry Pi 4B (~14 FPS) alongside Nav2 with semantic costmaps, and it is evaluated with a Leave-One-Cow-Out (LOCO) protocol that holds out each individual animal as a test set.
+
+## 📄 Publications
+
+This work is part of my M.Sc. thesis at UQAM (WELL-E Chair), supervised by Prof. Abdoulaye Baniré Diallo and Prof. Mounir Boukadoum.
+
+1. **F. G. Toure, A. B. Diallo, M. Boukadoum**, "Farm-Scale Autonomous Welfare Monitoring in Smart Livestock Farming: A Systematic Review of Robotics and Multimodal AI with an Emphasis on the Lab-to-Farm Deployment Gap," *IEEE Transactions on AgriFood Electronics (TAFE)*, Early Access, 2026. DOI: [10.1109/TAFE.2026.3687491](https://doi.org/10.1109/TAFE.2026.3687491)
+
+2. **F. G. Toure, A. B. Diallo, M. Boukadoum**, "<NEWCAS PAPER TITLE>," *IEEE International New Circuits and Systems Conference (NEWCAS)*, Chicoutimi, QC, Canada, 2026. DOI: [10.1109/NewCAS64543.2026.11674023](https://doi.org/10.1109/NewCAS64543.2026.11674023)
+
+3. **F. G. Toure, A. B. Diallo, M. Boukadoum**, "Embedded AI Architecture Evaluation for in-Barn Real-Time Bovine Mastitis Detection at the Edge," *IEEE International Conference on Artificial Intelligence Circuits and Systems (AICAS)*, Ha Long Bay, Vietnam, 2026. (To appear)
+
 ## Table of Contents
 
+- [ROSCon 2026 Lightning Talk](#-roscon-2026-lightning-talk)
+- [Publications](#-publications)
 - [Overview](#overview)
 - [Features](#features)
 - [Quick Start](#quick-start)
@@ -357,11 +379,11 @@ sudo cat /etc/ssh/sshd_config | grep -v "^#" | grep -v "^$"
 **Solutions**:
 1. **Use Tailscale** (recommended) - bypasses all network restrictions
 2. Check if cowbot is on the correct network:
-   ```bash
+```bash
    # On cowbot
    ip addr show
    hostname -I
-   ```
+```
 3. Verify both devices are on the same subnet
 4. Check for client isolation on the network
 
@@ -372,19 +394,19 @@ sudo cat /etc/ssh/sshd_config | grep -v "^#" | grep -v "^$"
 **Solutions**:
 1. **Use Tailscale IP instead of local IP**
 2. Verify SSH service is running:
-   ```bash
+```bash
    sudo systemctl status ssh
    sudo systemctl start ssh
-   ```
+```
 3. Check firewall rules:
-   ```bash
+```bash
    sudo ufw status
    sudo ufw allow from <YOUR_IP>
-   ```
+```
 4. Check SSH logs for errors:
-   ```bash
+```bash
    sudo journalctl -u ssh -n 50 --no-pager
-   ```
+```
 
 #### Tailscale Not Connecting
 
@@ -393,15 +415,15 @@ sudo cat /etc/ssh/sshd_config | grep -v "^#" | grep -v "^$"
 **Solutions**:
 1. Verify internet connectivity on both devices
 2. Restart Tailscale:
-   ```bash
+```bash
    sudo systemctl restart tailscaled
    sudo tailscale up
-   ```
+```
 3. Check Tailscale status:
-   ```bash
+```bash
    tailscale status
    tailscale ping <device-name>
-   ```
+```
 4. Verify devices are authenticated in the Tailscale admin console:
    https://login.tailscale.com/admin/machines
 
